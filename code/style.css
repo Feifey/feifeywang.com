@@ -1,0 +1,447 @@
+/* ============================================
+   DESIGN SYSTEM — CSS Variables
+   ============================================ */
+
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #111111;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #999999;
+  --accent-blue: #1a1ab8;
+  --accent-blue-hover: #2424d4;
+  --link-color: #ffffff;
+  --card-bg: #1a1a1a;
+  --card-border: #2a2a2a;
+
+  --font-primary: 'Montserrat', sans-serif;
+  --radius: 8px;
+  --radius-pill: 999px;
+  --max-width: 900px;
+  --side-padding: 60px;
+  --section-gap: 80px;
+}
+
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+strong {
+  font-weight: 600;
+}
+
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px var(--side-padding);
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.nav-logo img {
+  height: 36px;
+  width: auto;
+  /* SVG is already white, no filter needed */
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.7;
+}
+
+/* Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.dropdown-menu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  padding-top: 12px; /* invisible bridge so hover doesn't break */
+  z-index: 1001;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown-menu-inner {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 8px 0;
+  min-width: 180px;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--card-bg);
+}
+
+
+/* ============================================
+   HERO
+   ============================================ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--side-padding);
+}
+
+.hero-content {
+  max-width: var(--max-width);
+  width: 100%;
+}
+
+.hero-greeting {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.hero-name {
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.hero-tagline {
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.hero-description {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+
+/* ============================================
+   WORKS / PROJECT CARDS
+   ============================================ */
+
+.works {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--side-padding) var(--section-gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.project-card-image img {
+  width: 100%;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease;
+}
+
+.project-card-image:hover img {
+  transform: scale(1.02);
+}
+
+.project-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-card-title a {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.project-card-title a:hover {
+  opacity: 0.8;
+}
+
+.project-card-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.project-card-meta {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.project-card-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.project-card-link:hover {
+  opacity: 0.7;
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px var(--side-padding);
+  border-top: 1px solid var(--card-border);
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo {
+  height: 48px;
+  width: auto;
+  /* SVG is already white, no filter needed */
+}
+
+.footer-heading {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.footer-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.footer-credit {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--text-primary);
+}
+
+.footer-link-icon {
+  margin-right: 4px;
+}
+
+
+/* ============================================
+   RESPONSIVE — TABLET (768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --side-padding: 32px;
+    --section-gap: 60px;
+  }
+
+  .hero-name {
+    font-size: 48px;
+  }
+
+  .hero-tagline {
+    font-size: 20px;
+  }
+
+  .hero-description {
+    font-size: 18px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-right {
+    text-align: left;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+}
+
+
+/* ============================================
+   RESPONSIVE — MOBILE (480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+  :root {
+    --side-padding: 20px;
+    --section-gap: 48px;
+  }
+
+  .nav {
+    padding: 16px var(--side-padding);
+  }
+
+  .nav-logo img {
+    height: 28px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .hero-name {
+    font-size: 36px;
+  }
+
+  .hero-tagline {
+    font-size: 18px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .project-card-title a {
+    font-size: 24px;
+  }
+
+  .footer-heading {
+    font-size: 20px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
