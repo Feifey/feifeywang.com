@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toilet Delivery App — Feifey Wang</title>
+  <link rel="icon" href="../重用/ff.svg">
+  <link rel="apple-touch-icon" href="../重用/ff.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-casestudy">
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="../重用/ff.svg" alt="Feifey Wang logo">
+    </a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="index.html#works" class="nav-link dropdown-trigger">work <span class="dropdown-arrow">&#8964;</span></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-menu-inner">
+            <a href="toiletdeliveryapp.html">Toilet Delivery</a>
+            <a href="industrious.html">Industrious</a>
+            <a href="wellcomecollection.html">Wellcome Collection</a>
+          </div>
+        </div>
+      </div>
+      <a href="creatives.html" class="nav-link">creatives</a>
+      <a href="about.html" class="nav-link">about</a>
+      <a href="../assets/Feifey_Wang_Resume_Interaction.pdf" class="nav-link" target="_blank" rel="noopener noreferrer">resume ↗</a>
+    </div>
+  </nav>
+
+  <main class="casestudy-main">
+
+    <!-- HERO -->
+    <section class="cs-hero" style="background: linear-gradient(135deg, #0a0a2e 0%, #1a1ab8 50%, #0a0a2e 100%);">
+      <div class="cs-hero-inner">
+        <div class="cs-hero-text">
+          <h1>Delivery Toilet</h1>
+          <p class="cs-hero-subtitle">— Restroom Access for Delivery Workers</p>
+          <p class="cs-hero-description">A map-based, <strong>end-to-end</strong> mobile web <strong>application</strong> designed to help delivery workers quickly locate <strong>usable restroom</strong> access with clarity, reliability, and low friction.</p>
+        </div>
+        <div class="cs-hero-image">
+          <img src="../重用/Delivery_Toilet.png" alt="Toilet Delivery App screens">
+        </div>
+      </div>
+    </section>
+
+    <!-- META -->
+    <div class="cs-meta">
+      <div>
+        <p class="cs-meta-label">Role</p>
+        <p class="cs-meta-value">UX + UI Design<br>Research<br>Prototyping+ Testing<br>Visual Design<br>Branding<br>User Flow</p>
+      </div>
+      <div>
+        <p class="cs-meta-label">Timeline</p>
+        <p class="cs-meta-value">November - Present</p>
+      </div>
+      <div>
+        <p class="cs-meta-label">Team</p>
+        <p class="cs-meta-value">1 Designer<br>1 Developers</p>
+      </div>
+      <div>
+        <p class="cs-meta-label">Tools</p>
+        <p class="cs-meta-value">Figma<br>Fig Jam<br>Apple Icon Composer<br>Vercel<br>Google Forms<br>Mapbox<br>JavaScript</p>
+      </div>
+    </div>
+
+    <!-- MY CONTRIBUTION -->
+    <section class="cs-contributions">
+      <h2>My Contribution</h2>
+      <div class="cs-contributions-grid">
+        <div class="cs-contribution-card">
+          <p><strong>Problem Framing:</strong> Defined "usable access" as the core design challenge, grounding product decisions in dignity and reliability.</p>
+        </div>
+        <div class="cs-contribution-card">
+          <p><strong>Product Design:</strong> Designed the MVP experience and interaction flows for a Mapbox-based web app demo.</p>
+        </div>
+        <div class="cs-contribution-card">
+          <p><strong>System Design:</strong> Built a full brand and reusable UI components to support clarity, accessibility, and scale.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS TD -->
+    <section class="cs-section">
+      <div class="cs-two-col">
+        <div>
+          <h2>What is Toilet Delivery?</h2>
+          <p>Toilet Delivery helps NYC delivery workers find the nearest usable restroom—fast.</p>
+          <p>Instead of showing every restroom pin, the experience highlights options that are open, realistically accessible, and worth the detour, so workers can take a respectful break without disrupting their route.</p>
+        </div>
+        <div>
+          <img src="../重用/TD.png" alt="Toilet Delivery app mockups">
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER: BATHROOM BREAK -->
+    <div class="cs-banner">
+      <h2>A bathroom break shouldn't be a negotiation.</h2>
+    </div>
+
+    <!-- THE PROBLEM -->
+    <section class="cs-section">
+      <h2>The Problem</h2>
+      <p>Delivery workers move on tight schedules, often without reliable access to restrooms.</p>
+      <p>When the nearest option is locked, "customers-only," or hard to enter quickly, a basic need turns into lost time, stress, and unsafe workarounds. Existing restroom-finding tools rarely reflect what delivery workers actually need at street speed: certainty, fast entry, and confidence that the option is usable right now.</p>
+
+      <div class="cs-quote">
+        <div class="cs-quote-avatar"></div>
+        <div>
+          <p class="cs-quote-name">Anonymous Interviewee</p>
+          <p class="cs-quote-text">"Many pees in bottles my husband used to do. People just would say no and you are delivering in residential estate in teh middle of nowhere."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER: HOW IS THE PROBLEM ADDRESSED -->
+    <div class="cs-banner">
+      <h2>How is the problem currently being addressed?</h2>
+      <p>Before designing TD, we looked at how people solve this today and where the gaps are.</p>
+    </div>
+
+    <!-- CURRENT STATE -->
+    <section class="cs-section">
+      <div class="cs-two-col">
+        <div>
+          <h3>1) Existing tools only support finding the restroom</h3>
+          <p>Most restroom maps focus on existence, not access. They may list locations, but often miss the details that decide whether a restroom works in a delivery context: entry rules, hours, reliability, and what happens when a location fails.</p>
+        </div>
+        <div>
+          <h3>2) Current solutions for delivery workers</h3>
+          <p>Without a dependable source, workers rely on memory, luck, or negotiation: returning to "safe" spots, buying something just to enter, asking staff, or holding it until the route ends. These workarounds are inconsistent and expensive — especially when every minute affects income and ratings.</p>
+        </div>
+      </div>
+
+      <div class="cs-image-full">
+        <img src="../重用/TD Desk Research.png" alt="Desk Research on current solutions and pain points">
+        <p class="cs-image-caption">Desk Research on current solutions and pain points</p>
+      </div>
+    </section>
+
+    <!-- BANNER: WHAT DOES USABLE MEAN -->
+    <div class="cs-banner">
+      <h2>What does "usable" really mean on a delivery route?</h2>
+    </div>
+
+    <!-- USABILITY FACTORS -->
+    <section class="cs-section">
+      <p>For delivery workers, a restroom's usability is shaped less by distance and more by risk and uncertainty. In practice, restrooms fail not because they're far away, but because access is denied, parking is risky, or availability disappears at the moment of need.</p>
+
+      <h3 style="margin-top: 40px;">Top factors that make a restroom unusable during a delivery shift</h3>
+      <div class="cs-stats-row">
+        <div class="cs-stat-item">
+          <div class="cs-pie" style="background: conic-gradient(var(--accent-blue) 0% 22.5%, #444 22.5% 100%);">
+            <span class="cs-pie-label">22.5%</span>
+          </div>
+          <p class="cs-stat-caption">Parking / ticket risk and Detour</p>
+        </div>
+        <div class="cs-stat-item">
+          <div class="cs-pie" style="background: conic-gradient(var(--accent-blue) 0% 35%, #444 35% 100%);">
+            <span class="cs-pie-label">35%</span>
+          </div>
+          <p class="cs-stat-caption">Denied access (staff says no)</p>
+        </div>
+        <div class="cs-stat-item">
+          <div class="cs-pie" style="background: conic-gradient(var(--accent-blue) 0% 42%, #444 42% 100%);">
+            <span class="cs-pie-label">42%</span>
+          </div>
+          <p class="cs-stat-caption">No useable restroom when needed</p>
+        </div>
+      </div>
+
+      <div class="cs-two-col">
+        <div class="cs-pain-points">
+          <div class="cs-pain-point">Limited restroom access during delivery shifts</div>
+          <div class="cs-pain-point">Unpredictable entry &amp; conflicting access rules</div>
+          <div class="cs-pain-point">Lack of confidence at the moment of need</div>
+        </div>
+        <div>
+          <h3>Confidence reduces wasted time and risk.</h3>
+          <p>Although delivery workers initially describe their problem as "not enough restrooms," deeper research revealed a different issue. Restrooms often exist, but access is unpredictable—denied by staff, unavailable at critical moments, or risky to reach during an active route.</p>
+          <p>What delivery workers lack isn't location information, but confidence that a restroom will be usable when they arrive.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER: USABLE = -->
+    <div class="cs-banner">
+      <h2>"Usable" = fast, reliable, and low-friction.</h2>
+    </div>
+
+    <!-- DESIGN PRINCIPLES -->
+    <section class="cs-section">
+      <div class="cs-principles">
+        <div class="cs-principle">
+          <h4>01 Predictability &gt; proximity</h4>
+          <p>Show options that are reliable, not just nearby.</p>
+        </div>
+        <div class="cs-principle">
+          <h4>02 Street-speed clarity</h4>
+          <p>Design for one-handed use, quick scanning, and minimal reading.</p>
+        </div>
+        <div class="cs-principle">
+          <h4>03 Low-friction access</h4>
+          <p>Reduce steps, avoid negotiation, and surface entry details before arrival.</p>
+        </div>
+      </div>
+      <p>Based on these principles, we designed TD to help delivery workers quickly identify the nearest usable restroom with confidence.</p>
+    </section>
+
+    <!-- KEY FEATURES -->
+    <section class="cs-section">
+      <h2>Key Features</h2>
+
+      <div class="cs-feature">
+        <div>
+          <h3>Responsive Location, Map, and Toilet fetching</h3>
+          <p>Fetching user's current location, displaying all available the toilet options around them. Identify different types of toilet place with icons shown coming with responsive map for user to adjust.</p>
+        </div>
+        <div>
+          <img src="../重用/find nearest.gif" alt="Map and toilet fetching demo">
+        </div>
+      </div>
+
+      <div class="cs-feature cs-feature-reverse">
+        <div>
+          <img src="../重用/commute options.gif" alt="Navigation demo">
+        </div>
+        <div>
+          <h3>Supporting fast, street-speed navigation.</h3>
+          <p>Using the 'Find nearest' button or select a restroom, TD integrates navigation to guide users there with minimal friction.</p>
+        </div>
+      </div>
+
+      <div class="cs-feature">
+        <div>
+          <h3>"Usable" = fast, reliable, and low-friction.</h3>
+          <p>Restrooms are ranked by real-world usability rather than distance alone. Showing the type of the toilet and rating the quality of the restroom.</p>
+        </div>
+        <div>
+          <img src="../重用/Toilet Info 1.png" alt="Toilet info and rating">
+        </div>
+      </div>
+
+      <div class="cs-feature cs-feature-reverse">
+        <div>
+          <img src="../重用/Different Modes.gif" alt="Different commute modes">
+        </div>
+        <div>
+          <h3>Adapting to different ways of moving through the city.</h3>
+          <p>TD supports driving, walking, and cycling, updating routes and guidance accordingly. For each option, the app provides estimated travel time and distance, helping users quickly judge whether a restroom fits their current delivery window.</p>
+        </div>
+      </div>
+
+      <p>These features rely on quick recognition and predictable behaviour. To make that possible across the product, I created a unified visual system focused on clarity, accessibility, and consistency.</p>
+    </section>
+
+    <!-- DESIGN SYSTEM -->
+    <section class="cs-section">
+      <h2>Design system &amp; Brand</h2>
+      <div class="cs-image-full">
+        <img src="../重用/Frame 1.png" alt="Full design system overview">
+      </div>
+    </section>
+
+    <!-- APP FLOW MOCKUPS -->
+    <section class="cs-section">
+      <div class="cs-image-full">
+        <img src="../重用/Toliet_Delivery.png" alt="Full app flow — splash screen to navigation">
+      </div>
+    </section>
+
+    <!-- BANNER: IMPACT -->
+    <div class="cs-banner">
+      <h2>What was our impact?</h2>
+    </div>
+
+    <!-- VALIDATION -->
+    <section class="cs-section">
+      <h2>Validation through real-world conversation</h2>
+      <p>TD was presented and tested during Studio Open Day through a live prototype. Across conversations with delivery workers, students, and visitors, the problem resonated immediately. Rather than questioning the need for the product, most feedback focused on how the experience could better support fast, low-stress decisions during active routes.</p>
+      <p>This response validated our core insight: the challenge isn't finding restrooms, but <strong>trusting that access will work when it matters.</strong></p>
+
+      <div class="cs-quote">
+        <div class="cs-quote-avatar"></div>
+        <div>
+          <p class="cs-quote-name">Delivery worker, Open Day</p>
+          <p class="cs-quote-text">"This is actually something I need. I usually just guess and hope it works."</p>
+        </div>
+      </div>
+
+      <div class="cs-quote">
+        <div class="cs-quote-avatar"></div>
+        <div>
+          <p class="cs-quote-name">Visitor feedback</p>
+          <p class="cs-quote-text">"I like that it doesn't show everything, just the ones that actually work."</p>
+        </div>
+      </div>
+
+      <div class="cs-cta">
+        <a href="#" class="cs-cta-button">View Prototype</a>
+        <div class="cs-supporting">
+          <h3>Supporting Materials</h3>
+          <a href="#" target="_blank">Full Figma File ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER: NEXT -->
+    <div class="cs-banner">
+      <h2>How do we go from here?</h2>
+    </div>
+
+    <!-- NEXT STEPS -->
+    <section class="cs-section">
+      <h2>Next step for TD</h2>
+      <div class="cs-next-steps">
+        <div class="cs-next-step">
+          <h4>Commute Options &amp; Toilet Option Change</h4>
+          <p>Walking/ Bike/ PublicTransportation and More options for people to choose</p>
+        </div>
+        <div class="cs-next-step">
+          <h4>Locating Parking</h4>
+          <p>Adding parking places' options that goes with the toilet around</p>
+        </div>
+        <div class="cs-next-step">
+          <h4>Time of the day</h4>
+          <p>Since some toilet spots are in the restaurant, it is better to include the opening time of those places</p>
+        </div>
+        <div class="cs-next-step">
+          <h4>Rating System</h4>
+          <p>Would be better if the user are able to add rating too as well, so it is not a one side information provide</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAKEAWAYS -->
+    <section class="cs-takeaways">
+      <h2>My Takeaways</h2>
+      <div class="cs-takeaways-grid">
+        <div class="cs-takeaway-card">
+          <p>Progress comes from identifying clear insight and designing decisively around it. Move forward with informed assumptions, validate quickly, and refine through iteration.</p>
+        </div>
+        <div class="cs-takeaway-card">
+          <p>Distinguish between what could be built and what should be built. Clarify the core value of the product. I learned to treat scope as a design decision, not a constraint.</p>
+        </div>
+        <div class="cs-takeaway-card">
+          <p>Usability comes from subtraction. Prioritise the top options had a bigger impact than adding more features. Information hierarchy matters more than feature count.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      <img src="../重用/ff.svg" alt="Feifey Wang logo" class="footer-logo">
+      <h2 class="footer-heading">Let's<br>Connect</h2>
+    </div>
+    <div class="footer-right">
+      <p class="footer-text">Thank you for your interest, let's collaborate!</p>
+      <p class="footer-credit">Made with lots of bobas + sweets &nbsp;© Feifey Wang</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/feifey-wang/" target="_blank" rel="noopener noreferrer"><span class="footer-link-icon">in</span> LinkedIn</a>
+        <a href="https://github.com/feifeywang" target="_blank" rel="noopener noreferrer"><span class="footer-link-icon">⌥</span> Github</a>
+        <a href="mailto:cwang54@sva.edu"><span class="footer-link-icon">✉</span> Email</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
