@@ -1,68 +1,94 @@
-# Image setup notes
+# Images — how to get them onto feifeywang.com
 
-## How to populate `assets/images/`
+## The situation
 
-Run once on your Mac:
+Every image on the live site is currently broken. The cause: `assets/images/`
+has the right *folder structure*, but every file inside those folders is
+**0 bytes** — empty placeholders left behind when `setup-images.sh` was run
+before and failed partway. A 0-byte file still returns HTTP 200, so the
+browser gets an "image" with no pixels and shows nothing.
+
+The real source images are fine. They're sitting flat in `assets/images/`
+(about 200 files, ~62 MB). They just never got copied into the subfolders.
+
+## The fix — two commands
 
 ```bash
 cd ~/Documents/Claude/Projects/feifeywang.com
 bash setup-images.sh
 ```
 
-This copies everything it can from `~/Desktop/重用` into the right slots.
+That script deletes the empty placeholders, copies the case-study images into
+place, downloads the about + creatives photos from your Webflow CDN, and then
+verifies every path the HTML asks for. It prints a list of anything still
+broken at the end. It's safe to re-run.
 
----
+Then publish:
 
-## Files you still need to add
+```bash
+git add -A
+git commit -m "Add site images"
+git push
+```
 
-The HTML expects these paths but I had no matching source file. Drop your real images at these exact paths (match the extensions — `.jpg` for photos, `.png` for graphics):
+GitHub Pages redeploys in about a minute. Hard-refresh with **Cmd+Shift+R** —
+your browser has the broken versions cached.
 
-### `about/`
+## What changed from the old script
 
-| Path | Description |
-|---|---|
-| `about/portrait.jpg` | Your portrait photo |
-| `about/lifestyle-beach.jpg` | "at the beach" |
-| `about/lifestyle-park.jpg` | "at the park" |
-| `about/lifestyle-cafe.jpg` | "at a café" |
-| `about/lifestyle-lens.jpg` | "on my lens" |
-
-### `creatives/`
-
-| Path | Description |
-|---|---|
-| `creatives/design-1.jpg` … `design-6.jpg` | 6 graphic design pieces |
-| `creatives/photo-1.jpg` … `photo-5.jpg` | 5 photography pieces |
-| `creatives/more-1.jpg`, `more-2.jpg` | 2 mixed-media / illustration pieces |
-
-If you want different counts (e.g. 10 photos instead of 5), edit `creatives.html` and add/remove `<img>` tags accordingly.
-
----
-
-## Wrong files in the original site that I routed but didn't fix
-
-These slots are populated by `setup-images.sh` using the same files the original Webflow site referenced — **but those files are wrong for the slot**. You'll need to export the right images and overwrite them.
-
-| Path | What's there now (wrong) | What it should be |
+| | Old | New |
 |---|---|---|
-| `industrious/research/research-plan.png` | Screenshot of Wellcome Collection's website | A real screenshot of your research plan / interview guide |
-| `industrious/recommendations/01-conversation-starters.png` | Pie chart from the Toilet Delivery survey | A graphic showing the conversation-starter concept |
+| about/ + creatives/ | Told you to find 18 images yourself | Downloads all 39 from your Webflow CDN |
+| Verification | None — failed silently | Checks every `src=` in every HTML file, reports 404s and 0-byte files |
+| Placeholder cleanup | Ran *after* some copies | Runs first, so nothing stale survives |
+| Missing GIFs | Failed silently | Detects the empty `Compress GIF/` folder and tells you the restore command |
 
-I also routed away from one wrong file:
+## First: restore the missing GIFs
 
-| Path | Old (wrong) source | New (correct) source |
+The `assets/images/Compress GIF/` folder is empty on this Mac — those files
+went missing during the computer switch. They're safe in git. Restore every
+deleted file with:
+
+```bash
+git ls-files -d -z | xargs -0 git restore --
+```
+
+This is why it matters — the compressed versions are the ones the site should use:
+
+| File | Compressed (in git) | Uncompressed |
 |---|---|---|
-| `toilet/design-system/00-overview.png` | `Frame 1.png` (a Korean API spec table) | `Design System.png` (the actual design-system overview) |
+| Find Nearest | **2.56 MB** | 16.69 MB |
+| Exhibition List | **3.46 MB** | 23.31 MB |
+| Exhibtion Page | **2.86 MB** | 12.41 MB |
+| Different Modes | **1.50 MB** | *no GIF version exists* |
 
----
+10 MB total instead of 52 MB, and `different-modes.gif` only exists in
+compressed form — without the restore it can't be built at all except by
+converting the `.MOV` with ffmpeg.
 
-## Notes on file size + performance
+## Creatives page now matches Webflow
 
-The MOV files in `~/Desktop/重用/drive-download-…/` are the originals for your animated demos. Convert them to MP4 (smaller, better quality than GIF) and replace the GIFs:
+The old `creatives.html` had 13 image slots. Your Webflow creatives page has
+**34** pieces. The HTML has been updated to hold all of them:
 
-- Toilet Delivery: `find-nearest.gif`, `different-modes.gif`, `commute-options.gif`, plus `menu`, `starting-app`, `starting-page`
-- Wellcome: `exhibition-list.gif`, `exhibition-page.gif`
+- Design — 13 (`design-01` … `design-13`)
+- Photography — 12 (`photo-01` … `photo-12`)
+- + More — 9 (`more-01` … `more-09`)
 
-Easiest converter: https://cloudconvert.com/mov-to-mp4
+Extensions vary (`.png`, `.jpg`, `.gif`) because they match the originals.
 
-Once converted, swap the `<img src="…gif">` for `<video autoplay loop muted playsinline src="…mp4"></video>` in the HTML and you'll cut tens of megabytes off your page weight.
+## Optional: lighter still
+
+With the compressed GIFs the animations total ~10 MB, which is fine. If you
+want to go further, the `.MOV` originals are in
+`assets/images/drive-download-.../`. Converting those to MP4 and swapping
+`<img>` for `<video autoplay loop muted playsinline>` would get the same
+animations down to roughly 1 MB each. Not urgent.
+
+## Repo size
+
+`assets/images/` also holds ~62 MB of flat originals and `.MOV` files that the
+site never serves. They'll get committed and served by GitHub Pages for no
+reason. Consider moving them to a `_source/` folder and adding it to
+`.gitignore` — but do that *after* the site is working, not before, since
+`setup-images.sh` reads from that flat folder.
