@@ -66,14 +66,16 @@ echo "[2/4] Copying case-study images from local originals..."
 # Logo
 cp_rename "ff.svg" "common/logo-ff.svg"
 
-# Homepage cards
-cp_rename "Frame 16.png"           "home/card-toilet.png"
+# Homepage cards — these are the three 1800x1200 covers Webflow uses.
+# (Frame 16/17 are the multi-screen mockup composites, NOT the covers.)
+cp_rename "Delivery_Toilet.png"    "home/card-toilet.png"
 cp_rename "Industrious_Cover.png"  "home/card-industrious.png"
-cp_rename "Frame 17.png"           "home/card-wellcome.png"
+cp_rename "Wellcome_Collection.png" "home/card-wellcome.png"
 
 # Toilet Delivery
-cp_rename "Frame 16.png"           "toilet/hero.png"
-cp_rename "TD.png"                 "toilet/screens/td-overview.png"
+cp_rename "Delivery_Toilet.png"    "toilet/hero.png"
+# was TD.png — a 1440x17407 full-page screenshot of the Webflow site itself
+cp_rename "Frame 16.png"           "toilet/screens/td-overview.png"
 cp_rename "TD Desk Research.png"   "toilet/research/desk-research.png"
 cp_rename "Toilet Info 1.png"      "toilet/screens/info-1.png"
 cp_rename "Toliet_Delivery.png"    "toilet/screens/full-app-flow.png"
@@ -84,23 +86,26 @@ cp_rename "Compress GIF/Find Nearest.gif"    "toilet/animations/find-nearest.gif
 cp_rename "Compress GIF/Different Modes.gif" "toilet/animations/different-modes.gif"
 cp_rename "commute options.gif"              "toilet/animations/commute-options.gif"
 
-# Industrious
+# Industrious — every slot below was verified against the Webflow page by
+# matching exact pixel dimensions AND the surrounding section heading.
 cp_rename "Industrious_Cover.png"  "industrious/hero.png"
-cp_rename "Industrious.png"        "industrious/deliverables/final-cover.png"
-cp_rename "Screenshot 2026-01-24 at 07.52.43.png" "industrious/research/research-plan.png"
-cp_rename "Screenshot 2026-01-24 at 07.53.51.png" "industrious/synthesis/affinity-outcomes.png"
-cp_rename "Screenshot 2026-02-07 at 15.37.25.png" "industrious/recommendations/01-conversation-starters.png"
-cp_rename "Screenshot 2026-02-07 at 16.26.19.png" "industrious/recommendations/02-peer-events.png"
-cp_rename "Screenshot 2026-02-07 at 17.53.15.png" "industrious/recommendations/03-nuanced-space.png"
+cp_rename "[SVA IxD] Industrious Final-01.png" "industrious/deliverables/final-cover.png"   # was Industrious.png (full-page screenshot)
+cp_rename "Screenshot 2026-02-07 at 17.53.15.png" "industrious/research/research-plan.png"          # was a Wellcome website screenshot
+cp_rename "Screenshot 2026-02-07 at 17.54.21.png" "industrious/synthesis/affinity-outcomes.png"
+cp_rename "Screenshot 2026-02-07 at 18.29.41.png" "industrious/recommendations/01-conversation-starters.png"  # was a Toilet Delivery pie chart
+cp_rename "Screenshot 2026-02-15 at 16.39.00.png" "industrious/recommendations/02-peer-events.png"
+cp_rename "Screenshot 2026-02-15 at 16.39.44.png" "industrious/recommendations/03-nuanced-space.png"
 
 # Wellcome Collection
-cp_rename "Frame 17.png"                       "wellcome/hero.png"
-cp_rename "Wellcome-collection.png"            "wellcome/branding/wellcome-photos-logo.png"
-cp_rename "Wellcome Collection mobile app.png" "wellcome/screens/visitor-utility.png"
-cp_rename "Map 1 - Eng.png"                    "wellcome/screens/map.png"
+# The "- Eng" variants (428x926) are NOT what Webflow serves — it uses the
+# 373x756 exports. Matched by exact dimensions against the live Webflow page.
+cp_rename "Wellcome_Collection.png"            "wellcome/hero.png"                          # was Frame 17.png
+cp_rename "unnamed.jpg"                        "wellcome/branding/wellcome-photos-logo.png"
+cp_rename "Keypad.png"                         "wellcome/screens/visitor-utility.png"       # was a 1440x14368 full-page screenshot
+cp_rename "Map 1.png"                          "wellcome/screens/map.png"                   # was Map 1 - Eng.png
 cp_rename "3D Audio.png"                       "wellcome/3d-audio/concept.png"
-cp_rename "3D Audio Page Being Human.png"      "wellcome/3d-audio/being-human.png"
-cp_rename "3D Audio Page 1880 THAT.png"        "wellcome/3d-audio/1880.png"
+cp_rename "3D Audio 1.png"                     "wellcome/3d-audio/being-human.png"
+cp_rename "3D Audio 2.png"                     "wellcome/3d-audio/1880.png"
 # Compressed versions — 3.46 MB and 2.86 MB vs 23 MB and 12 MB uncompressed.
 # Note the typo "Exhibtion" — that's the real filename in the repo, not a mistake here.
 cp_rename "Compress GIF/Exhibition List.gif"   "wellcome/animations/exhibition-list.gif"

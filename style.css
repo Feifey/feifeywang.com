@@ -208,8 +208,10 @@ strong {
    WORKS / PROJECT CARDS
    ============================================ */
 
+/* Wider than --max-width (900px) to match the Webflow original, where the
+   project cards run close to full width. */
 .works {
-  max-width: var(--max-width);
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--side-padding) var(--section-gap);
   display: flex;
@@ -217,15 +219,18 @@ strong {
   gap: var(--section-gap);
 }
 
+/* Even split — the old 60/40 squeezed the description into a 252px column. */
 .project-card {
   display: grid;
-  grid-template-columns: 60% 1fr;
-  gap: 60px;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
   align-items: center;
 }
 
 .project-card-image img {
+  display: block;
   width: 100%;
+  height: auto;
   border-radius: var(--radius);
   transition: transform 0.3s ease;
 }
@@ -367,8 +372,12 @@ strong {
   padding-top: 100px;
 }
 
+/* Wider than --max-width (900px) to match the Webflow original's 1200px, so
+   the portrait and lifestyle photos render at a reasonable size. Aspect ratios
+   are preserved throughout — cropping is done with object-fit: cover, which
+   never distorts the image. */
 .about-hero {
-  max-width: var(--max-width);
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--side-padding) var(--section-gap);
 }
@@ -383,12 +392,27 @@ strong {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 40px;
-  align-items: start;
+  align-items: stretch;
+}
+
+/* The portrait crops to match the height of the bio text beside it, rather
+   than running past it at full natural height. The image is absolutely
+   positioned so it doesn't contribute to the row height — the text alone
+   sets it, and the photo fills whatever that turns out to be. */
+.about-photo {
+  position: relative;
+  min-height: 420px;
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 
 .about-photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  border-radius: var(--radius);
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .about-bio {
@@ -417,7 +441,7 @@ strong {
 
 /* Lifestyle section */
 .about-lifestyle {
-  max-width: var(--max-width);
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--side-padding) var(--section-gap);
   text-align: center;
@@ -467,9 +491,14 @@ strong {
   min-height: 100vh;
 }
 
+/* Capped and centred so the TOC lives in the gutter rather than eating into
+   the content column. Without this, crossing the TOC breakpoint made the page
+   content suddenly 180px NARROWER as the window got WIDER. */
 .casestudy-body {
   display: flex;
   position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .casestudy-main {
@@ -536,7 +565,10 @@ strong {
   font-weight: 600;
 }
 
-@media (min-width: 1200px) {
+/* Only show the sidebar once the window is wide enough that reserving 180px
+   for it doesn't shrink the content. At 1200px it did, which is why widening
+   the window (or zooming out) made the layout jump. */
+@media (min-width: 1440px) {
   .cs-toc {
     display: block;
   }
@@ -549,38 +581,40 @@ strong {
   overflow: hidden;
 }
 
+/* The cover image carries the title, subtitle and description as artwork —
+   matching the Webflow original, which has no HTML heading here at all.
+   The .cs-hero-text block is kept in the DOM but visually hidden so the page
+   still has a real <h1> for screen readers and search engines. */
 .cs-hero-inner {
-  max-width: var(--max-width);
+  max-width: 1400px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 40px;
-  align-items: center;
+  display: block;
 }
 
-.cs-hero-text h1 {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 8px;
+.cs-hero-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.cs-hero-subtitle {
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--text-secondary);
-  margin-bottom: 16px;
-}
-
-.cs-hero-description {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
+/* Webflow uses width:80% of a 1200px container (= 960px). These pages have a
+   TOC sidebar Webflow doesn't, so a fixed 80% would come out far too narrow.
+   Filling the available column and capping at 1200px lands in the same place. */
 .cs-hero-image img {
+  display: block;
   width: 100%;
-  border-radius: var(--radius);
+  max-width: 1200px;
+  height: 500px;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
 }
 
 /* Meta Grid */
@@ -1013,6 +1047,16 @@ strong {
   gap: 16px;
 }
 
+/* Case study pages run wider than the 900px site default so the body content
+   lines up with the 1200px hero cover. Declared after the individual rules
+   above so it wins on source order. */
+.cs-meta,
+.cs-contributions,
+.cs-section,
+.cs-takeaways {
+  max-width: 1200px;
+}
+
 .cs-takeaway-card {
   background-color: var(--card-bg);
   border-radius: var(--radius);
@@ -1080,18 +1124,26 @@ strong {
   padding-top: 100px;
 }
 
+/* Two-column section: heading + description pinned LEFT, masonry images RIGHT.
+   The creatives page is deliberately wider than --max-width (900px) — the
+   Webflow original runs nearly full-bleed. */
 .creatives-section {
-  max-width: var(--max-width);
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 var(--side-padding) var(--section-gap);
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) 3fr;
+  gap: 48px;
+  align-items: start;
 }
 
 .creatives-section-header {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
-  align-items: start;
-  margin-bottom: 32px;
+  display: block;
+  margin-bottom: 0;
+}
+
+.creatives-section-header h2 {
+  margin-bottom: 16px;
 }
 
 .creatives-section-header h2 {
@@ -1106,21 +1158,22 @@ strong {
   margin-bottom: 8px;
 }
 
+/* Masonry columns, matching the Webflow original: images keep their natural
+   aspect ratio and stack down each column. Do NOT reintroduce aspect-ratio or
+   object-fit here — that crops tall posters and portrait film scans to squares. */
 .creatives-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  column-count: 3;
+  column-gap: 16px;
 }
 
 .creatives-grid img {
+  display: block;
   width: 100%;
+  height: auto;
   border-radius: var(--radius);
-  aspect-ratio: 1;
-  object-fit: cover;
-}
-
-.creatives-grid-wide img {
-  aspect-ratio: auto;
+  margin-bottom: 16px;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
 }
 
 
@@ -1151,6 +1204,11 @@ strong {
     gap: 24px;
   }
 
+  .cs-stats-row,
+  .cs-principles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .footer {
     flex-direction: column;
     gap: 32px;
@@ -1167,6 +1225,12 @@ strong {
   /* About */
   .about-hero-content {
     grid-template-columns: 1fr;
+  }
+
+  /* Stacked: no text column to match, so give the portrait its own ratio */
+  .about-photo {
+    aspect-ratio: 4 / 5;
+    min-height: 0;
   }
 
   .about-lifestyle-grid {
@@ -1224,12 +1288,18 @@ strong {
   }
 
   /* Creatives */
-  .creatives-section-header {
-    grid-template-columns: 1fr;
-  }
-
   .creatives-grid {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
+  }
+}
+
+/* Between 768 and 1024 the side-by-side layout squeezes the masonry columns
+   down to ~160px. Stack the description above the images instead, which lets
+   them keep three usable columns. */
+@media (max-width: 1024px) {
+  .creatives-section {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 }
 
@@ -1284,4 +1354,68 @@ strong {
     flex-direction: column;
     gap: 12px;
   }
+
+  .creatives-grid {
+    column-count: 1;
+  }
+
+  /* Collapse every case-study grid to a single column. Without this the meta
+     grid held two ~147px columns that couldn't shrink, forcing the whole page
+     ~40px wider than a 320px screen and creating a horizontal scrollbar. */
+  .cs-meta,
+  .cs-meta-5col,
+  .cs-contributions-grid,
+  .cs-takeaways-grid,
+  .cs-two-col,
+  .cs-two-col-reverse,
+  .cs-feature,
+  .cs-feature-reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .about-lifestyle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* A single 32px word ("Recommendations") is wider than a 320px screen and
+     was forcing a horizontal scrollbar on every case study page. */
+  .cs-banner {
+    padding: 40px var(--side-padding);
+  }
+
+  .cs-banner h2 {
+    font-size: 24px;
+  }
+
+  .cs-section h2 {
+    font-size: 26px;
+  }
+
+  /* Three fixed 140px pie charts plus gaps need 484px — more than a 320px
+     screen has. Stack them. */
+  .cs-stats-row,
+  .cs-principles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Safety net: long unbroken words (URLs, compound terms) should wrap rather
+   than push the layout wider than the screen. Applies at every size. */
+h1, h2, h3, h4, p, li, a {
+  overflow-wrap: break-word;
+}
+
+/* Grid and flex children default to min-width:auto, which means they refuse to
+   shrink below their content's intrinsic width. On narrow screens that pushed
+   the page wider than the viewport. Letting them shrink to 0 is the standard
+   fix and is what allows the layouts above to actually be fluid. */
+.cs-two-col > *,
+.cs-feature > *,
+.cs-meta > *,
+.cs-contributions-grid > *,
+.cs-takeaways-grid > *,
+.cs-principles > *,
+.project-card > *,
+.about-hero-content > * {
+  min-width: 0;
 }
