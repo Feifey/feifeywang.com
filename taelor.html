@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Taelor, Feifey Wang</title>
+  <meta name="description" content="Product and marketing design for Taelor, a menswear rental startup.">
+  <link rel="icon" href="assets/images/common/logo-ff.svg">
+  <link rel="apple-touch-icon" href="assets/images/common/logo-ff.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>(function(){var m=!matchMedia('(prefers-reduced-motion: reduce)').matches;try{var s=localStorage.getItem('fw-motion');if(s==='on')m=true;if(s==='off')m=false}catch(e){}document.documentElement.classList.add(m?'motion-on':'motion-off')})();</script>
+  <script src="main.js" defer></script>
+</head>
+<body class="c-tae">
+<a class="skip" href="#main" id="skip">Skip to content</a>
+<canvas id="trail" aria-hidden="true"></canvas>
+<div id="cursor-label" aria-hidden="true"></div>
+<header class="bar bar--top" id="topbar">
+  <nav class="wrap bar__in" aria-label="Main">
+    <a class="logo" href="index.html" data-nav="home" aria-label="Feifey Wang, home"><span>ff</span></a>
+    <div class="navdd" id="work-dd">
+      <button type="button" id="work-btn" data-nav="work" aria-current="page" aria-expanded="false" aria-controls="work-menu"><span>Work</span><svg class="navdd__chev" width="9" height="6" viewBox="0 0 9 6" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <ul class="navdd__menu" id="work-menu" hidden>
+        <li><a href="work.html"><span>All work</span></a></li>
+        <li><a href="toiletdeliveryapp.html"><span>Toilet Delivery</span></a></li>
+        <li><a href="budgie.html"><span>Budgie</span></a></li>
+        <li><a href="taelor.html" aria-current="page"><span>Taelor</span></a></li>
+        <li><a href="industrious.html"><span>Industrious</span></a></li>
+        <li><a href="wellcomecollection.html"><span>Wellcome Collection</span></a></li>
+      </ul>
+    </div>
+    <a href="creatives.html" data-nav="creatives"><span>Creatives</span></a>
+    <a href="about.html" data-nav="about"><span>About</span></a>
+    <a href="assets/Feifey_Wang_Resume_Interaction.pdf" target="_blank" rel="noopener"><span>Resume</span><span class="sr"> (PDF, opens in new tab)</span></a>
+    <button type="button" id="motion" aria-pressed="true"><span>Motion on</span></button>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="page" id="p-tae">
+  <div class="wrap">
+    <div class="page-head" id="taelor">
+      <div style="grid-column:1/-1"><a class="textlink label back" href="work.html">Back to all work</a></div>
+      <h1 class="h1" id="tae-h1" tabindex="-1">Taelor</h1>
+      <div class="intro">
+        <p class="lede">Product and marketing design for a menswear rental startup: the stylist pages on the website, a gift card flow in the warehouse tool, and what a customer sees when the box arrives.</p>
+        <span class="btn btn--ghost" aria-disabled="true">[Live stylist page link]</span>
+      </div>
+    </div>
+    <img class="shot" src="assets/img/tae-cover.jpg" width="1001" height="440" style="width:100%" alt="Top of the redesigned Meet the team page: the headline Real human stylists. Smarter outfit picks. Less shopping, beside two stylists standing at a clothing rail.">
+    <dl class="meta">
+      <div><dt class="label">Role</dt><dd>UX/UI designer and marketing designer</dd></div>
+      <div><dt class="label">Timeline</dt><dd>Intern, May to August 2026. Contractor since</dd></div>
+      <div><dt class="label">Team</dt><dd>My manager, two PMs, an engineering lead and a copywriter</dd></div>
+      <div><dt class="label">Tools</dt><dd>Figma, Adobe, Shopify</dd></div>
+    </dl>
+  </div>
+
+  <section class="cs-sec" id="overview" aria-labelledby="h-overview"><div class="wrap cs-grid">
+    <div class="cs-head"><p class="label">1. Overview</p><h2 class="h2" id="h-overview" tabindex="-1">One designer across website, operations and marketing</h2></div>
+    <div class="cs-body">
+    <p class="lede">Taelor is a menswear rental subscription that pairs human stylists with AI. As the only designer on a small team, I worked on every place a customer or a warehouse worker meets the brand.</p>
+    <div class="three">
+      <div><b>Website</b><span>Stylist pages, which I was put in charge of, and the subscriber homepage.</span></div>
+      <div><b>Operations tool</b><span>A gift card flow, taken from nothing to daily use in the warehouse.</span></div>
+      <div><b>Brand touchpoints</b><span>Packing sticker, new customer flyer, social posts and Meta ads.</span></div>
+    </div>
+    </div>
+  </div></section>
+
+  <div class="banner"><div class="wrap"><p class="banner__t">Emotion and trust first. Show how the styling works, not how powerful the AI is.</p></div></div>
+
+  <section class="cs-sec" id="problem" style="border-top:0" aria-labelledby="h-problem"><div class="wrap cs-grid">
+    <div class="cs-head"><p class="label">2. Problem</p><h2 class="h2" id="h-problem" tabindex="-1">A growing service whose touchpoints did not match</h2></div>
+    <div class="cs-body">
+    <div class="two">
+      <div><h3 class="h3" style="margin-bottom:14px">For customers</h3><ul class="list"><li>The stylist page opened with a long biography before any proof.</li><li>Too many words, and fonts and images that did not fit the brand.</li><li>The packing sticker and new customer flyer were wordy and off-style.</li></ul></div>
+      <div><h3 class="h3" style="margin-bottom:14px">For the warehouse</h3><ul class="list"><li>Physical gift cards had no flow in the operations tool.</li><li>Two machines could start picking the same order.</li><li>Missing and in-repair items were tracked on sticky notes.</li></ul></div>
+    </div>
+    </div>
+  </div></section>
+
+  <section class="cs-sec" id="research" aria-labelledby="h-research"><div class="wrap cs-grid">
+    <div class="cs-head"><p class="label">3. Research</p><h2 class="h2" id="h-research" tabindex="-1">I started by being a customer</h2></div>
+    <div class="cs-body">
+    <ol class="flow">
+      <li>Signed up and used the service</li><li>Learned the website and the operations tool</li><li>Interviewed other interns about onboarding</li><li>Wrote up every issue, ranked by risk</li>
+    </ol>
+    <div>
+      <h3 class="h3" style="margin-bottom:8px">What I found, in priority order</h3>
+      <div class="tblwrap" tabindex="0" role="region" aria-label="Process issues ranked by priority"><table class="tbl">
+        <thead><tr><th scope="col">Priority</th><th scope="col">Problem</th><th scope="col">Proposed fix</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Critical</th><td>Two machines can start the same order, which risks duplicate picking and wrong shipments.</td><td>Show "In progress" before Start is pressed, and lock the order to one machine.</td></tr>
+          <tr><th scope="row">High</th><td>Pick lists are not in rack order, so pickers walk back and forth on every order.</td><td>Sort the list by rack position.</td></tr>
+          <tr><th scope="row">Foundational</th><td>Racks are numbered with no logic, so one clothing type is scattered.</td><td>A letter for the category plus a number, like A01 or B01.</td></tr>
+          <tr><th scope="row">Hygiene</th><td>Missing and in-repair items are tracked on sticky notes.</td><td>A status tag on the item in the system.</td></tr>
+          <tr><th scope="row">Polish</th><td>The packing sticker and new customer flyer are wordy and off-brand.</td><td>Fewer words, one style, more visuals.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    </div>
+  </div></section>
+
+  <div class="banner"><div class="wrap"><p class="banner__t">Think from the customer's point of view, even in the wording.</p></div></div>
+
+  <section class="cs-sec" id="solution" style="border-top:0" aria-labelledby="h-solution"><div class="wrap cs-grid">
+    <div class="cs-head"><p class="label">4. Solution</p><h2 class="h2" id="h-solution" tabindex="-1">Three places people meet the brand</h2></div>
+    <div class="cs-body">
+    <div class="block">
+      <div><p class="label">Website</p><h3 class="h3" style="margin-top:4px">Stylist pages, redesigned for trust</h3></div>
+      <ul class="list"><li>The call to action moved to the top: "Get matched with a stylist".</li><li>Real customer quotes, with name and date, sit under each look.</li><li>The biography moved down and got shorter.</li><li>Previous and next links let visitors browse all ten stylists.</li></ul>
+      <ul class="ba" data-lb>
+        <li><p class="label">Before</p><button type="button" class="piece" data-cursor="Open" data-title="Stylist page, before" data-kind="Website" data-desc="The old page opened with a long biography and one button."><img src="assets/img/tae-detail-before.jpg" width="1118" height="1970" loading="lazy" alt="The old stylist page for Melissa Slavick: name, a long paragraph of biography, a Get Styled button, then four looks and two blog articles."></button></li>
+        <li><p class="label">After</p><button type="button" class="piece" data-cursor="Open" data-title="Stylist page, after" data-kind="Website" data-desc="Action first, then looks with customer quotes, then a shorter biography."><img src="assets/img/tae-detail-after.jpg" width="978" height="2000" loading="lazy" alt="The redesigned stylist page: name and style tags, a Get matched with a stylist button, four looks each with a customer quote and date, a highlighted quote, About Melissa, then articles and links to the previous and next stylist."></button></li>
+        <li><p class="label">Team page</p><button type="button" class="piece" data-cursor="Open" data-title="Meet the team page" data-kind="Website" data-desc="A new headline, six stylist cards with their background, and customer stories."><img src="assets/img/tae-list.jpg" width="1001" height="2000" loading="lazy" alt="The redesigned Meet the team page: a hero with two stylists at a clothing rail, a grid of six stylist cards with credentials, and a row of customer stories."></button></li>
+        <li><p class="label">Phone</p><button type="button" class="piece" data-cursor="Open" data-title="Meet the team page, phone" data-kind="Website" data-desc="The same page at phone width, with stylist cards in a swipeable row."><img src="assets/img/tae-list-mobile.jpg" width="267" height="1732" loading="lazy" alt="The Meet the team page on a phone: hero image, headline, a Get Styled button, a row of stylist cards and a customer story."></button></li>
+      </ul>
+      <p class="cap" style="text-align:left;max-width:none">Open any screen to see it larger. Built with the engineer for desktop and phone.</p>
+    </div>
+    <div class="block">
+      <div><p class="label">Operations tool</p><h3 class="h3" style="margin-top:4px">A gift card flow, from zero to in use</h3></div>
+      <ul class="list"><li>Mapped how a physical gift card is picked, packed and shipped.</li><li>The picker types the card number on a phone. The packer types it again on the computer.</li><li>If the two numbers differ, the tool shows both and highlights the difference.</li><li>Designed the printed cards and the "How to use your gift card" insert.</li></ul>
+      <figure class="fig"><img class="shot" src="assets/img/tae-flow.jpg" width="1680" height="950" loading="lazy" style="width:100%" alt="Flow chart of the gift card order: picking on a phone covers a big envelope, a postcard for one, two or three months, a small envelope, a card holder and the card with its number typed in; packing on a computer asks for the number again and prints a shipping label with no return label."><figcaption class="cap">The picking and packing flow. Red boxes are the steps that were new for gift cards.</figcaption></figure>
+      <figure class="fig"><img class="shot" src="assets/img/tae-pick.jpg" width="1627" height="370" loading="lazy" style="width:100%" alt="Eight phone screens of the picking flow: one item per screen with a Mark as check button, a screen to type the gift card number, and a final screen that sends the picker to packing."><figcaption class="cap">Picking on a phone, one item at a time. Customer names are blurred.</figcaption></figure>
+      <div class="feature" style="border-top:0;padding-block:0">
+        <div class="prose"><h4 class="h3">The double check</h4><p>A gift card number is typed twice by two people. A mismatch stops the order before it ships.</p></div>
+        <div class="demo"><img class="" src="assets/img/tae-confirm.jpg" width="790" height="396" loading="lazy" style="width:100%" alt="Dialog titled Confirm gift card number, showing the number typed earlier beside the number just typed, with the differing characters in red, and Back and Confirm buttons."></div>
+      </div>
+      <figure class="fig"><img class="shot" src="assets/img/tae-cards.jpg" width="2017" height="1125" loading="lazy" style="width:100%" alt="Printed gift cards for one, two and three months on white, grey and black, each reading Here is a gift card for you, above three How to use your gift card inserts with a QR code and three steps."><figcaption class="cap">Printed gift cards and the insert that explains how to use one.</figcaption></figure>
+    </div>
+    <div class="block">
+      <div><p class="label">Website</p><h3 class="h3" style="margin-top:4px">A subscriber homepage with clear next steps</h3></div>
+      <p style="max-width:40em">Each card is one thing a subscriber can do next: review a collection, make a request for the next shipment, or browse new arrivals.</p>
+      <div class="pair"><img class="shot" src="assets/img/tae-sub-desktop.jpg" width="1153" height="716" loading="lazy" alt="Desktop subscriber homepage with two cards: Any specific request for your next shipment, with a Make Request button, and Ready for a style refresh, with a Check New Arrivals button."><img class="shot" src="assets/img/tae-sub-mobile.jpg" width="313" height="1508" loading="lazy" alt="Phone subscriber homepage with three stacked cards: Review your collections, Any specific request for your next shipment, and Ready for a style refresh."></div>
+    </div>
+    <div class="block">
+      <div><p class="label">Unboxing</p><h3 class="h3" style="margin-top:4px">What a new customer sees in the box</h3></div>
+      <p style="max-width:40em">The sticker now says two things in large type. The flyer explains the service in four steps, with a QR code for each action.</p>
+      <div class="stickers">
+        <figure><img class="" src="assets/img/tae-sticker-before.jpg" width="295" height="295" loading="lazy" alt="The earlier round packing sticker: Hang up to reduce wrinkles, and Size labels vary by brand with an extra line of small text."><figcaption class="cap">Sticker, before</figcaption></figure>
+        <figure><img class="" src="assets/img/tae-sticker-after.jpg" width="295" height="295" loading="lazy" alt="The new round packing sticker with the same two messages in larger type and no small text."><figcaption class="cap">Sticker, after</figcaption></figure>
+      </div>
+      <div class="two"><figure class="fig"><img class="shot" src="assets/img/tae-flyer-front.jpg" width="792" height="612" loading="lazy" style="width:100%" alt="New customer flyer, outside: a cover reading Welcome to Taelor, a new era of you starts here, with a note from the founders, beside a panel titled Get more from Taelor with four options and QR codes."><figcaption class="cap">New customer flyer, outside.</figcaption></figure><figure class="fig"><img class="shot" src="assets/img/tae-flyer-back.jpg" width="792" height="612" loading="lazy" style="width:100%" alt="New customer flyer, inside: Your Taelor shipment in four steps, then Enjoy your shipment, Return and refresh, and Reviews and requests, each with short answers and a QR code."><figcaption class="cap">New customer flyer, inside.</figcaption></figure></div>
+    </div>
+    <div class="block">
+      <div><p class="label">Marketing</p><h3 class="h3" style="margin-top:4px">Ads and social posts</h3></div>
+      <p style="max-width:40em">Large type, few words and one clear offer worked best in ads. Social posts moved toward a lifestyle feeling.</p>
+      <figure class="fig"><img class="shot" src="assets/img/tae-ads.jpg" width="1486" height="1207" loading="lazy" style="width:100%" alt="Twelve square Meta ads in three colour sets. Each shows one or two men in casual outfits with a short headline such as Personal styling or Show up ready, and 30 dollars off your first shipment."><figcaption class="cap">July 4 Meta ads: four messages in three looks.</figcaption></figure>
+      <figure class="fig"><img class="shot" src="assets/img/tae-social.jpg" width="1764" height="204" loading="lazy" style="width:100%" alt="A row of twelve social post images with a warm, seasonal feel: knitwear, families at home, city streets and gift boxes."><figcaption class="cap">One week of social posts.</figcaption></figure>
+    </div>
+    </div>
+  </div></section>
+
+  <section class="cs-sec" id="reflection" aria-labelledby="h-reflection"><div class="wrap cs-grid">
+    <div class="cs-head"><p class="label">5. Reflection</p><h2 class="h2" id="h-reflection" tabindex="-1">Still shipping</h2></div>
+    <div class="cs-body">
+    <div class="three">
+      <div><b>[Result 1]</b><span>[For example: the stylist pages went live on desktop and phone in a given month.]</span></div>
+      <div><b>[Result 2]</b><span>[For example: the gift card flow is used in the warehouse for every gift card order.]</span></div>
+      <div><b>[Result 3]</b><span>[A number if you have one: clicks, sign-ups, time saved or fewer errors.]</span></div>
+    </div>
+    <div class="two">
+      <div><h3 class="h3" style="margin-bottom:14px">What I took away</h3><ul class="list"><li>Use the product as a customer before designing for it.</li><li>Rank problems by risk, so the team knows what to fix first.</li><li>Fewer words and one clear action, on a page, a sticker or an ad.</li></ul></div>
+      <div><h3 class="h3" style="margin-bottom:14px">In progress</h3><ul class="list"><li>Redesign of the My Style Board page.</li><li>The new customer onboarding journey.</li><li>Customer testimonial text messages.</li></ul></div>
+    </div>
+    </div>
+  </div></section>
+
+  <a class="next" href="industrious.html" data-cursor="View Industrious" data-trail>
+    <div class="next__text"><p class="label">See next project</p><p class="h1">Industrious</p><p style="max-width:26em">Research-driven strategy for how people connect in shared coworking spaces.</p></div>
+    <img src="assets/img/card-industrious.jpg" width="1200" height="800" loading="lazy" alt="">
+  </a>
+</div>
+</main>
+
+<button type="button" class="totop up" id="totop" aria-label="Back to top" data-cursor="Top" hidden><svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path d="M8 17V2M1.5 8.5 8 2l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+
+<footer class="foot" id="contact" data-trail>
+  <div class="wrap">
+    <h2 class="foot__title">Let's connect</h2>
+    <div class="foot__grid">
+      <div><p class="h3" style="margin-bottom:6px">Find me</p>
+        <ul class="label">
+          <li><a class="textlink" href="https://www.linkedin.com/in/feifey-wang/" target="_blank" rel="noopener">LinkedIn<span class="sr"> (opens in new tab)</span></a></li>
+          <li><a class="textlink" href="https://github.com/feifeywang" target="_blank" rel="noopener">GitHub<span class="sr"> (opens in new tab)</span></a></li>
+          <li><a class="textlink" href="assets/Feifey_Wang_Resume_Interaction.pdf" target="_blank" rel="noopener">Resume<span class="sr"> (PDF, opens in new tab)</span></a></li>
+        </ul>
+      </div>
+      <div><p class="h3" style="margin-bottom:14px">Email me</p>
+        <p class="addr" id="addr">feifeywang@gmail.com</p>
+        <div class="row" style="margin-top:12px"><button type="button" class="chip" id="copy">Copy email</button><span id="copied" aria-live="polite" class="count"></span></div>
+      </div>
+      <p class="foot__say">Thank you for your interest, let's collaborate!</p>
+    </div>
+    <small>Made with lots of bobas and sweets. © Feifey Wang</small>
+  </div>
+</footer>
+
+<nav class="bar bar--bottom" id="toc" aria-label="Case study sections">
+  <div class="wrap bar__in">
+    <a href="#overview" data-sec="overview"><span>1. Overview</span></a>
+    <a href="#problem" data-sec="problem"><span>2. Problem</span></a>
+    <a href="#research" data-sec="research"><span>3. Research</span></a>
+    <a href="#solution" data-sec="solution"><span>4. Solution</span></a>
+    <a href="#reflection" data-sec="reflection"><span>5. Reflection</span></a>
+  </div>
+</nav>
+
+<dialog id="lightbox" aria-labelledby="lb-title">
+  <div class="lb__top"><span class="label" style="color:var(--ink)">Feifey Wang</span><button type="button" class="lb__btn label" id="lb-close">Close</button></div>
+  <div class="lb__stage">
+    <button type="button" class="lb__arrow" id="lb-prev" aria-label="Previous piece"><svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M12 1 2 11l10 10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    <img id="lb-img" src="" alt="">
+    <button type="button" class="lb__arrow" id="lb-next" aria-label="Next piece"><svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M2 1l10 10L2 21" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  </div>
+  <div class="lb__info" aria-live="polite">
+    <div><h2 class="h3" id="lb-title"></h2><p id="lb-desc" style="color:var(--mute);font-size:15px">[One or two lines on what this piece is about and why you made it.]</p></div>
+    <p class="label"><span id="lb-kind"></span> <span id="lb-count" style="margin-left:14px"></span></p>
+  </div>
+</dialog>
+</body>
+</html>

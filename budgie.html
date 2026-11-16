@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Budgie, Feifey Wang</title>
+  <meta name="description" content="A parrot-shaped desk companion that lets long-distance friends send short voice messages.">
+  <link rel="icon" href="assets/images/common/logo-ff.svg">
+  <link rel="apple-touch-icon" href="assets/images/common/logo-ff.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=Manjari:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>(function(){var m=!matchMedia('(prefers-reduced-motion: reduce)').matches;try{var s=localStorage.getItem('fw-motion');if(s==='on')m=true;if(s==='off')m=false}catch(e){}document.documentElement.classList.add(m?'motion-on':'motion-off')})();</script>
+  <script src="main.js" defer></script>
+</head>
+<body class="c-bud">
+<a class="skip" href="#main" id="skip">Skip to content</a>
+<canvas id="trail" aria-hidden="true"></canvas>
+<div id="cursor-label" aria-hidden="true"></div>
+<header class="bar bar--top" id="topbar">
+  <nav class="wrap bar__in" aria-label="Main">
+    <a class="logo" href="index.html" data-nav="home" aria-label="Feifey Wang, home"><span>ff</span></a>
+    <div class="navdd" id="work-dd">
+      <button type="button" id="work-btn" data-nav="work" aria-current="page" aria-expanded="false" aria-controls="work-menu"><span>Work</span><svg class="navdd__chev" width="9" height="6" viewBox="0 0 9 6" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <ul class="navdd__menu" id="work-menu" hidden>
+        <li><a href="work.html"><span>All work</span></a></li>
+        <li><a href="toiletdeliveryapp.html"><span>Toilet Delivery</span></a></li>
+        <li><a href="budgie.html" aria-current="page"><span>Budgie</span></a></li>
+        <li><a href="taelor.html"><span>Taelor</span></a></li>
+        <li><a href="industrious.html"><span>Industrious</span></a></li>
+        <li><a href="wellcomecollection.html"><span>Wellcome Collection</span></a></li>
+      </ul>
+    </div>
+    <a href="creatives.html" data-nav="creatives"><span>Creatives</span></a>
+    <a href="about.html" data-nav="about"><span>About</span></a>
+    <a href="assets/Feifey_Wang_Resume_Interaction.pdf" target="_blank" rel="noopener"><span>Resume</span><span class="sr"> (PDF, opens in new tab)</span></a>
+    <button type="button" id="motion" aria-pressed="true"><span>Motion on</span></button>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="page" id="p-bud">
+  <div class="wrap">
+    <div class="page-head" id="budgie">
+      <div style="grid-column:1/-1"><a class="textlink label back" href="work.html">Back to all work</a></div>
+      <h1 class="h1" id="bud-h1" tabindex="-1">Budgie</h1>
+      <div class="intro">
+        <p class="lede">A parrot-shaped desk companion that lets long-distance friends send each other short voice messages, beak to beak.</p>
+        <a class="btn btn--ghost" href="https://youtu.be/ETT_tbadjFM" target="_blank" rel="noopener">Watch the film<span class="sr"> on YouTube (opens in new tab)</span></a>
+      </div>
+    </div>
+    <img class="shot" src="assets/img/bud-press.jpg" width="1600" height="1200" style="width:100%" alt="A hand reaching to press the beak of Budgie, a small cream parrot-shaped device perched on top of a computer monitor in an office.">
+    <dl class="meta">
+      <div><dt class="label">Role</dt><dd>UX research, product and UX design, end to end. Lead on brand identity and logo</dd></div>
+      <div><dt class="label">Timeline</dt><dd>Mid March to mid May 2026</dd></div>
+      <div><dt class="label">Team</dt><dd>4 designers: with Hye Seung Kim, Kai Wen Shi and Seong Ju Kim</dd></div>
+      <div><dt class="label">Methods</dt><dd>Interviews, competitive audit, concept and prototype testing</dd></div>
+      <div><dt class="label">Advisor</dt><dd>Adriana Young, SVA MFA Interaction Design</dd></div>
+    </dl>
+  </div>
+
+  <section class="cs-sec" id="overview" aria-labelledby="h-overview"><div class="wrap cs-grid">
+    <div class="cs-head"><p class="label">1. Overview</p><h2 class="h2" id="h-overview" tabindex="-1">Keeping friendships alive, one chirp at a time</h2></div>
+    <div class="cs-body">
+    <p class="lede">How might we help long-distance friends stay connected beyond texting and video calls? Budgie sits on top of your monitor and carries small moments between friends in a parrot's voice.</p>
+    <div class="three">
+      <div><b>Research</b><span>Interviews, product audit and synthesis, done together as a team of four.</span></div>
+      <div><b>Product and UX design</b><span>Two rounds of ideation, a 3D-printed prototype and play-tests.</span></div>
+      <div><b>Brand identity</b><span>The part I led: the logo and the brand guideline.</span></div>
+    </div>
+    </div>
+  </div></section>
+
+  <div class="banner"><div class="wrap"><p class="banner__t">People need a reason to reach out, not a reminder.</p></div></div>
+
+  <section class="cs-sec" id="problem" style="border-top:0" aria-labelledby="h-problem"><div class="wrap cs-grid">
+    <div class="cs-head"><p class="label">2. Problem</p><h2 class="h2" id="h-problem" tabindex="-1">Friendships fade quietly after a move</h2></div>
+    <div class="cs-body">
+    <div class="two">
+      <div><h3 class="h3" style="margin-bottom:14px">Who it is for</h3><ul class="list"><li>Young adults whose close friends moved away for school or work.</li><li>Time zones and new routines make contact harder over time.</li><li>Even sending a message can start to feel demanding.</li></ul></div>
+      <div><h3 class="h3" style="margin-bottom:14px">What exists today</h3><ul class="list"><li>Devices for couples assume a romantic bond.</li><li>Family photo frames broadcast one way.</li><li>Messaging apps keep friendships alive, but only at the surface.</li></ul></div>
+    </div>
+    <p style="max-width:40em">We audited more than twenty products. None was designed for adult friendships across distance.</p>
+    </div>
+  </div></section>
+
+  <section class="cs-sec" id="research" aria-labelledby="h-research"><div class="wrap cs-grid">
+    <div class="cs-head"><p class="label">3. Research</p><h2 class="h2" id="h-research" tabindex="-1">14 interviews before a single sketch</h2></div>
+    <div class="cs-body">
+    <p class="lede">We started broad, with communication and loneliness, and let the interviews narrow us to one thing: keeping a long-distance friendship going.</p>
+    <dl class="stats">
+      <div><dd>4</dd><dt>pilot interviews</dt></div>
+      <div><dd>10</dd><dt>in-depth interviews</dt></div>
+      <div><dd>20+</dd><dt>products audited</dt></div>
+      <div><dd>3</dd><dt>fields of literature</dt></div>
+    </dl>
+    <div>
+      <h3 class="h3" style="margin-bottom:8px">What we asked</h3>
+      <ol class="steps">
+        <li><span>Q1</span><div><b>What is the biggest barrier to keeping a long-distance friendship going?</b></div></li>
+        <li><span>Q2</span><div><b>What role do texting and social media play in friendships today?</b></div></li>
+        <li><span>Q3</span><div><b>Where in a friendship is the best moment to step in?</b></div></li>
+      </ol>
+    </div>
+    <div>
+      <h3 class="h3" style="margin-bottom:18px">How we worked</h3>
+      <ol class="flow">
+        <li>Pilot interviews</li><li>In-depth interviews</li><li>Desk research</li><li>Competitive audit</li><li>Affinity mapping</li><li>How Might We questions</li><li>Concept testing</li><li>Prototype testing</li>
+      </ol>
+    </div>
+    <div class="two">
+      <div><h3 class="h3" style="margin-bottom:14px">Who we spoke to</h3><ul class="list"><li>Ten people aged 23 to 35 who had moved for school or work.</li><li>UX designers, an actor, engineers, tutors and recent graduates.</li><li>Friends who once lived in the same city, not people who met online.</li><li>Four pilot interviews first, to find the right question.</li></ul></div>
+      <div><h3 class="h3" style="margin-bottom:14px">How the interviews ran</h3><ul class="list"><li>40 to 60 minutes each, in English or Mandarin, recorded with consent.</li><li>Topics: communication habits, time zones, drifting apart, moments that cannot be replaced.</li><li>A closing "magic wand" question.</li><li>The guide was peer-checked for leading language.</li></ul></div>
+    </div>
+    <div>
+      <h3 class="h3" style="margin-bottom:24px">What the literature says</h3>
+      <div class="three">
+        <div><b>Calm technology</b><span>Good technology lives at the edge of attention. Friends do not need another app asking for it.</span><span class="src">Weiser and Brown, 1996</span></div>
+        <div><b>Remote social presence</b><span>Touch and presence across distance are well studied for couples and families, but rarely for friends.</span><span class="src">Haans and IJsselsteijn, 2006</span></div>
+        <div><b>Friendship decay</b><span>Friendships fade when the small, low-effort moments disappear, not because of conflict.</span><span class="src">Roberts and Dunbar, 2011</span></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="h3" style="margin-bottom:8px">What is already on the market</h3>
+      <div class="tblwrap" tabindex="0" role="region" aria-label="Competitive audit table"><table class="tbl">
+        <thead><tr><th scope="col">Category</th><th scope="col">Examples</th><th scope="col">Why it misses friends</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Couples devices</th><td>Bond Touch, Friendship Lamps</td><td>Assume the equal, intense investment of romance.</td></tr>
+          <tr><th scope="row">Family photo frames</th><td>Aura, Skylight</td><td>One-way broadcast to a fixed family group.</td></tr>
+          <tr><th scope="row">Messaging apps</th><td>Instagram, iMessage, Discord, KakaoTalk</td><td>What friends use, but they keep things at the surface.</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3 class="h3" style="margin-bottom:8px">From insight to design question</h3>
+      <div class="tblwrap" tabindex="0" role="region" aria-label="Insights and How Might We questions"><table class="tbl">
+        <thead><tr><th scope="col">Insight</th><th scope="col">How might we</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">People need a reason to reach out, not a reminder.</th><td>Give easy, low-stakes ways into a conversation, without anyone having to go first?</td></tr>
+          <tr><th scope="row">The real need is passive presence, not active updates.</th><td>Make sharing life updates more ambient, without relying on text?</td></tr>
+          <tr><th scope="row">Shared experience matters.</th><td>Help friends build new shared experiences while physically apart?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <figure class="fig"><img class="shot" src="assets/img/bud-board.jpg" width="1800" height="809" loading="lazy" style="width:100%" alt="A FigJam board covered in clusters of coloured sticky notes from the team's early brainstorm, with a column of written concept summaries on the right."><figcaption class="cap">The team's early brainstorm board, before we narrowed to long-distance friendship.</figcaption></figure>
+    </div>
+  </div></section>
+
+  <div class="banner"><div class="wrap"><p class="banner__t">No draft, no preview, no edit. A friend gets your voice, just as in person.</p></div></div>
+
+  <section class="cs-sec" id="solution" style="border-top:0" aria-labelledby="h-solution"><div class="wrap cs-grid">
+    <div class="cs-head"><p class="label">4. Solution</p><h2 class="h2" id="h-solution" tabindex="-1">Press the beak, send a chirp</h2></div>
+    <div class="cs-body">
+    <h3 class="h3">From five concepts to one</h3>
+    <ol class="steps">
+      <li><span>01</span><div><b>Round one: Window Portal, Fridge Magnet, Twin Planters</b>Each one either asked too much of the user or said too little.</div></li>
+      <li><span>02</span><div><b>Round two: Cuckoo House and The Gossiper</b>One button with a small character, and a parrot that carries your voice to a friend.</div></li>
+      <li><span>03</span><div><b>Budgie</b>The press-to-record button of the Cuckoo House with the parrot and voice of The Gossiper.</div></li>
+    </ol>
+    <p class="cap" style="text-align:left;max-width:none">[Concept sketches for the five ideas go here.]</p>
+    <div>
+      <div class="feature">
+        <div class="prose"><h3 class="h3">Send a chirp</h3><p>Press the beak to record, release to send. A light pitch shift turns your words into a smaller, brighter, funnier voice.</p></div>
+        <div class="demo"><img style="width:min(100%,340px)" src="assets/img/bud-desk.jpg" width="1080" height="1350" loading="lazy" alt="Close-up of a finger about to press Budgie's orange beak. The cream parrot device has round black eyes and speaker holes on its cheeks."></div>
+      </div>
+      <div class="feature">
+        <div class="prose"><h3 class="h3">Receive a chirp</h3><p>Budgie wiggles when a message arrives. No buzz, no beep. You notice when you look up, then press the beak to play it.</p></div>
+        <div class="demo"><img style="width:100%" src="assets/img/bud-angle.jpg" width="1600" height="1200" loading="lazy" alt="3D render of Budgie from a three-quarter angle: a cream body fading to pale blue, blue cheek speakers, an orange beak and grey feet gripping an edge."></div>
+      </div>
+    </div>
+    <h3 class="h3">See it in use</h3>
+    <figure class="fig"><video class="film" src="assets/img/bud-film.mp4" poster="assets/img/bud-film.jpg" width="1280" height="720" controls preload="none" playsinline aria-label="Budgie demo film, 30 seconds, with sound"></video><figcaption class="cap">Demo film, 30 seconds, with sound. On-screen lines: "Voice notes, beak to beak", "Wiggles with every notification", "A little whimsy in your day".</figcaption></figure>
+    <div class="brand">
+      <div><h3 class="h3" style="margin-bottom:14px">Brand identity</h3>
+      <p style="max-width:40em">The part I led. The wordmark hides a small parrot inside the letter g: its body is the descender, and its beak and feet are picked out in blue against a warm dark brown. It reads first as type, then as a bird.</p></div>
+      <div><p class="label" style="margin-bottom:14px">Logo system. Open any version to see it larger.</p>
+      <ul class="logos" data-lb>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Logo on dark" data-kind="Logo" data-desc="White wordmark with blue beak and feet, for dark backgrounds."><img src="assets/img/bud-logo-dark.png" width="624" height="621" loading="lazy" alt="The Budgie logo in white on black: a rounded letter g that doubles as a small parrot, with blue beak and feet, next to the word budgie."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Brand mark on dark" data-kind="Brand mark" data-desc="The g on its own, for small spaces like an app icon."><img src="assets/img/bud-mark-dark.png" width="624" height="621" loading="lazy" alt="The Budgie brand mark alone in white on black: the parrot-shaped letter g with blue beak and feet."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Logo on light" data-kind="Logo" data-desc="Dark brown wordmark with blue beak and feet, for light backgrounds."><img src="assets/img/bud-logo-light.png" width="624" height="621" loading="lazy" alt="The Budgie logo in dark brown on white, with blue beak and feet on the parrot-shaped g."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Brand mark on light" data-kind="Brand mark" data-desc="The g on its own in dark brown."><img src="assets/img/bud-mark-light.png" width="624" height="621" loading="lazy" alt="The Budgie brand mark alone in dark brown on white, with blue beak and feet."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="One-colour logo" data-kind="Logo" data-desc="All black, for print and places where colour is not available."><img src="assets/img/bud-logo-mono.png" width="624" height="621" loading="lazy" alt="The Budgie logo in solid black on white, with no blue accents."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="One-colour brand mark" data-kind="Brand mark" data-desc="The g on its own in solid black."><img src="assets/img/bud-mark-mono.png" width="624" height="621" loading="lazy" alt="The Budgie brand mark alone in solid black on white."></button></li>
+      </ul></div>
+      <div><p class="label" style="margin-bottom:14px">Colour</p>
+      <ul class="swatches">
+        <li><span class="sw" style="background:#3D3530"></span><b>Dark brown</b><code>#3D3530</code><span>Logo and text on light. 12:1 on white.</span></li>
+        <li><span class="sw" style="background:#4290F5"></span><b>Budgie blue</b><code>#4290F5</code><span>Beak and feet only. An accent, not a text colour.</span></li>
+        <li><span class="sw sw--line" style="background:#FFFFFF"></span><b>White</b><code>#FFFFFF</code><span>Logo on dark, and the background on light.</span></li>
+      </ul></div>
+      <div><p class="label" style="margin-bottom:14px">Typeface</p>
+      <div class="type">
+        <div class="type__aa" aria-hidden="true">Aa</div>
+        <div class="type__body">
+          <p class="type__name">Manjari</p>
+          <p class="type__abc">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+          <p class="type__abc" style="font-weight:700">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
+          <dl class="type__scale">
+            <div><dt>Title 1</dt><dd>128</dd></div><div><dt>Title 2</dt><dd>64</dd></div><div><dt>Title 3</dt><dd>48</dd></div><div><dt>Text</dt><dd>24</dd></div>
+          </dl>
+        </div>
+      </div></div>
+    </div>
+    </div>
+  </div></section>
+
+  <section class="cs-sec" id="reflection" aria-labelledby="h-reflection"><div class="wrap cs-grid">
+    <div class="cs-head"><p class="label">5. Reflection</p><h2 class="h2" id="h-reflection" tabindex="-1">Five play-testers, five yeses</h2></div>
+    <div class="cs-body">
+    <div class="three">
+      <div><b>Intuitive</b><span>Everyone understood pressing the beak to record.</span></div>
+      <div><b>Charming</b><span>People laughed at their own voice through the parrot.</span></div>
+      <div><b>Wanted</b><span>All five could imagine sending a chirp, and several named a friend right away.</span></div>
+    </div>
+    <div class="two">
+      <div><h3 class="h3" style="margin-bottom:14px">Next for Budgie</h3><ul class="list"><li>Fit different monitor and laptop setups.</li><li>Make pairing feel as intentional as the interaction.</li><li>Make the line between ambient and active modes clearer.</li><li>A lighter digital widget version.</li></ul></div>
+      <div><h3 class="h3" style="margin-bottom:14px">What I took away</h3><ul class="list"><li>Friendships need less effort and more presence, not more reminders.</li><li>[Your own takeaway from the brand work.]</li><li>[Your own takeaway from working in a team of four.]</li></ul></div>
+    </div>
+    </div>
+  </div></section>
+
+  <a class="next" href="taelor.html" data-cursor="View Taelor" data-trail>
+    <div class="next__text"><p class="label">See next project</p><p class="h1">Taelor</p><p style="max-width:26em">Product and marketing design for a menswear rental startup.</p></div>
+    <img src="assets/img/tae-card.jpg" width="1001" height="667" loading="lazy" alt="">
+  </a>
+</div>
+</main>
+
+<button type="button" class="totop up" id="totop" aria-label="Back to top" data-cursor="Top" hidden><svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path d="M8 17V2M1.5 8.5 8 2l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+
+<footer class="foot" id="contact" data-trail>
+  <div class="wrap">
+    <h2 class="foot__title">Let's connect</h2>
+    <div class="foot__grid">
+      <div><p class="h3" style="margin-bottom:6px">Find me</p>
+        <ul class="label">
+          <li><a class="textlink" href="https://www.linkedin.com/in/feifey-wang/" target="_blank" rel="noopener">LinkedIn<span class="sr"> (opens in new tab)</span></a></li>
+          <li><a class="textlink" href="https://github.com/feifeywang" target="_blank" rel="noopener">GitHub<span class="sr"> (opens in new tab)</span></a></li>
+          <li><a class="textlink" href="assets/Feifey_Wang_Resume_Interaction.pdf" target="_blank" rel="noopener">Resume<span class="sr"> (PDF, opens in new tab)</span></a></li>
+        </ul>
+      </div>
+      <div><p class="h3" style="margin-bottom:14px">Email me</p>
+        <p class="addr" id="addr">feifeywang@gmail.com</p>
+        <div class="row" style="margin-top:12px"><button type="button" class="chip" id="copy">Copy email</button><span id="copied" aria-live="polite" class="count"></span></div>
+      </div>
+      <p class="foot__say">Thank you for your interest, let's collaborate!</p>
+    </div>
+    <small>Made with lots of bobas and sweets. © Feifey Wang</small>
+  </div>
+</footer>
+
+<nav class="bar bar--bottom" id="toc" aria-label="Case study sections">
+  <div class="wrap bar__in">
+    <a href="#overview" data-sec="overview"><span>1. Overview</span></a>
+    <a href="#problem" data-sec="problem"><span>2. Problem</span></a>
+    <a href="#research" data-sec="research"><span>3. Research</span></a>
+    <a href="#solution" data-sec="solution"><span>4. Solution</span></a>
+    <a href="#reflection" data-sec="reflection"><span>5. Reflection</span></a>
+  </div>
+</nav>
+
+<dialog id="lightbox" aria-labelledby="lb-title">
+  <div class="lb__top"><span class="label" style="color:var(--ink)">Feifey Wang</span><button type="button" class="lb__btn label" id="lb-close">Close</button></div>
+  <div class="lb__stage">
+    <button type="button" class="lb__arrow" id="lb-prev" aria-label="Previous piece"><svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M12 1 2 11l10 10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    <img id="lb-img" src="" alt="">
+    <button type="button" class="lb__arrow" id="lb-next" aria-label="Next piece"><svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M2 1l10 10L2 21" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  </div>
+  <div class="lb__info" aria-live="polite">
+    <div><h2 class="h3" id="lb-title"></h2><p id="lb-desc" style="color:var(--mute);font-size:15px">[One or two lines on what this piece is about and why you made it.]</p></div>
+    <p class="label"><span id="lb-kind"></span> <span id="lb-count" style="margin-left:14px"></span></p>
+  </div>
+</dialog>
+</body>
+</html>
