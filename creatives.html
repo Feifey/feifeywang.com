@@ -2,135 +2,125 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creatives — Feifey Wang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Creatives, Feifey Wang</title>
+  <meta name="description" content="Posters, type experiments, drawings and film photos by Feifey Wang.">
   <link rel="icon" href="assets/images/common/logo-ff.svg">
   <link rel="apple-touch-icon" href="assets/images/common/logo-ff.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script>(function(){var m=!matchMedia('(prefers-reduced-motion: reduce)').matches;try{var s=localStorage.getItem('fw-motion');if(s==='on')m=true;if(s==='off')m=false}catch(e){}document.documentElement.classList.add(m?'motion-on':'motion-off')})();</script>
+  <script src="main.js" defer></script>
 </head>
-<body class="page-creatives">
-
-  <!-- NAV -->
-  <nav class="nav">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/images/common/logo-ff.svg" alt="Feifey Wang logo">
-    </a>
-    <div class="nav-links">
-      <div class="nav-dropdown">
-        <a href="index.html#works" class="nav-link dropdown-trigger">work <span class="dropdown-arrow">&#8964;</span></a>
-        <div class="dropdown-menu">
-          <div class="dropdown-menu-inner">
-            <a href="toiletdeliveryapp.html">Toilet Delivery</a>
-            <a href="industrious.html">Industrious</a>
-            <a href="wellcomecollection.html">Wellcome Collection</a>
-          </div>
-        </div>
-      </div>
-      <a href="creatives.html" class="nav-link">creatives</a>
-      <a href="about.html" class="nav-link">about</a>
-      <a href="assets/Feifey_Wang_Resume_Interaction.pdf" class="nav-link" target="_blank" rel="noopener noreferrer">resume ↗</a>
+<body>
+<a class="skip" href="#main" id="skip">Skip to content</a>
+<canvas id="trail" aria-hidden="true"></canvas>
+<div id="cursor-label" aria-hidden="true"></div>
+<header class="bar bar--top" id="topbar">
+  <nav class="wrap bar__in" aria-label="Main">
+    <a class="logo" href="index.html" data-nav="home" aria-label="Feifey Wang, home"><span>ff</span></a>
+    <div class="navdd" id="work-dd">
+      <button type="button" id="work-btn" data-nav="work" aria-expanded="false" aria-controls="work-menu"><span>Work</span><svg class="navdd__chev" width="9" height="6" viewBox="0 0 9 6" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <ul class="navdd__menu" id="work-menu" hidden>
+        <li><a href="work.html"><span>All work</span></a></li>
+        <li><a href="toiletdeliveryapp.html"><span>Toilet Delivery</span></a></li>
+        <li><a href="budgie.html"><span>Budgie</span></a></li>
+        <li><a href="taelor.html"><span>Taelor</span></a></li>
+        <li><a href="industrious.html"><span>Industrious</span></a></li>
+        <li><a href="wellcomecollection.html"><span>Wellcome Collection</span></a></li>
+      </ul>
     </div>
+    <a href="creatives.html" data-nav="creatives" aria-current="page"><span>Creatives</span></a>
+    <a href="about.html" data-nav="about"><span>About</span></a>
+    <a href="assets/Feifey_Wang_Resume_Interaction.pdf" target="_blank" rel="noopener"><span>Resume</span><span class="sr"> (PDF, opens in new tab)</span></a>
+    <button type="button" id="motion" aria-pressed="true"><span>Motion on</span></button>
   </nav>
+</header>
 
-  <main class="creatives-main">
+<main id="main" tabindex="-1">
+<div class="page" id="p-creatives">
+  <div class="wrap">
+    <h1 class="sr" id="creatives-h1" tabindex="-1">Creatives</h1>
+    <ul class="wall" id="wall-list" data-lb>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Welcome Home" data-kind="Poster in place" data-full="assets/img/creatives/design-01-lg.jpg"><img src="assets/img/creatives/design-01.jpg" width="900" height="637" alt="A neon pink and blue Welcome Home poster shown in a bus shelter at dusk as a tram blurs past."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Tokyo Skytree" data-kind="35mm film" data-full="assets/img/creatives/photo-01-lg.jpg"><img src="assets/img/creatives/photo-01.jpg" width="900" height="1358" alt="Film photo of the Tokyo Skytree rising between low city buildings, a bird in the sky beside it."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Mission Complete" data-kind="Illustration" data-full="assets/img/creatives/more-01-lg.jpg"><img src="assets/img/creatives/more-01.jpg" width="900" height="1202" alt="Illustration on dark red. A hand holding a paper rises out of a pile of crumpled sheets, above the words Mission complete."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Religious VS Daily Necessity" data-kind="Data poster" data-full="assets/img/creatives/design-02-lg.jpg"><img src="assets/img/creatives/design-02.jpg" width="900" height="1272" alt="Mostly black poster with the title Religious VS Daily Necessity in white serif type and three small lines of data at the bottom."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Place]" data-kind="35mm film" data-full="assets/img/creatives/photo-02-lg.jpg"><img src="assets/img/creatives/photo-02.jpg" width="900" height="597" alt="Film photo of a long wall of stacked, decorated barrels under trees, with two people walking past."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Painting" data-full="assets/img/creatives/more-02-lg.jpg"><img src="assets/img/creatives/more-02.jpg" width="900" height="642" alt="Watercolour in blue, yellow and red with pencil drawings of lighters tumbling across it."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Poster" data-full="assets/img/creatives/design-03-lg.jpg"><img src="assets/img/creatives/design-03.jpg" width="900" height="1272" alt="Red poster filled with a grid of ringed dots in cream, brown, blue and black, each one slightly different."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Place]" data-kind="35mm film" data-full="assets/img/creatives/photo-03-lg.jpg"><img src="assets/img/creatives/photo-03.jpg" width="900" height="1200" alt="Film photo looking down a wide spiral staircase with people walking around it."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Painting" data-full="assets/img/creatives/more-03-lg.jpg"><img src="assets/img/creatives/more-03.jpg" width="900" height="1213" alt="Purple painting looking down at several pairs of feet in sneakers standing on dark steps."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Time Spent" data-kind="Data poster" data-full="assets/img/creatives/design-04-lg.jpg"><img src="assets/img/creatives/design-04.jpg" width="900" height="1272" alt="Grey poster covered in fine wave lines, with the words Time Spent set in scattered white serif letters down the left side."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Big Ben, London" data-kind="35mm film" data-full="assets/img/creatives/photo-04-lg.jpg"><img src="assets/img/creatives/photo-04.jpg" width="900" height="758" loading="lazy" alt="Film photo looking up at the clock tower of Big Ben against a deep blue sky."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Drawing" data-full="assets/img/creatives/more-04-lg.jpg"><img src="assets/img/creatives/more-04.jpg" width="900" height="649" loading="lazy" alt="Black and white ink drawing of figures around a basketball hoop with rays bursting out behind them."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Typography" data-full="assets/img/creatives/design-05-lg.jpg"><img src="assets/img/creatives/design-05.jpg" width="900" height="1272" loading="lazy" alt="White page with small Japanese and English words scattered in a loose vertical column."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Place]" data-kind="35mm film" data-full="assets/img/creatives/photo-05-lg.jpg"><img src="assets/img/creatives/photo-05.jpg" width="900" height="597" loading="lazy" alt="Film photo of a snow-covered mountain valley under a clear blue sky."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Painting" data-full="assets/img/creatives/more-05-lg.jpg"><img src="assets/img/creatives/more-05.jpg" width="900" height="1241" loading="lazy" alt="Orange painting of a figure in a face mask holding on to skyscrapers, surrounded by flames and virus shapes."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Look Closer" data-kind="Animated type" data-full="assets/img/creatives/design-06-lg.jpg" data-anim="assets/img/creatives/design-06.gif"><img src="assets/img/creatives/design-06.jpg" width="900" height="504" loading="lazy" alt="Still from an animation: the words Look closer in dotted letters beside thick black curved lines."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Place]" data-kind="35mm film" data-full="assets/img/creatives/photo-06-lg.jpg"><img src="assets/img/creatives/photo-06.jpg" width="900" height="1358" loading="lazy" alt="Film photo of a bare tree trunk beside a lake, snow on the ground and two people on a bench."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Illustration" data-full="assets/img/creatives/more-06-lg.jpg"><img src="assets/img/creatives/more-06.jpg" width="900" height="654" loading="lazy" alt="Two bright marker drawings side by side, packed with cartoon hands, faces and shapes."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Only 60M Apart" data-kind="Poster" data-full="assets/img/creatives/design-07-lg.jpg"><img src="assets/img/creatives/design-07.jpg" width="900" height="360" loading="lazy" alt="Navy poster with two green outlines of Taiwan side by side and the words Only 60M apart between them."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Place]" data-kind="35mm film" data-full="assets/img/creatives/photo-07-lg.jpg"><img src="assets/img/creatives/photo-07.jpg" width="900" height="597" loading="lazy" alt="Film photo of a fence completely covered in red and gold padlocks."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Painting" data-full="assets/img/creatives/more-07-lg.jpg"><img src="assets/img/creatives/more-07.jpg" width="900" height="1270" loading="lazy" alt="Blue and purple painting of a small figure in a green hat among large spiky floating spheres."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="Seminar, Noun." data-kind="Type experiment" data-full="assets/img/creatives/design-08-lg.jpg"><img src="assets/img/creatives/design-08.jpg" width="900" height="1273" loading="lazy" alt="Black poster. The word seminar is drawn in white letters wrapped around two open red mouths, above a dictionary definition of the noun."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Place]" data-kind="35mm film" data-full="assets/img/creatives/photo-08-lg.jpg"><img src="assets/img/creatives/photo-08.jpg" width="900" height="1358" loading="lazy" alt="Film photo of a crowded pebble beach beside bright turquoise sea."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Painting" data-full="assets/img/creatives/more-08-lg.jpg"><img src="assets/img/creatives/more-08.jpg" width="900" height="650" loading="lazy" alt="Two-panel painting of masked figures in striped shirts sitting on chairs while papers fly around them."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Book design" data-full="assets/img/creatives/design-09-lg.jpg"><img src="assets/img/creatives/design-09.jpg" width="900" height="675" loading="lazy" alt="A hand turning the page of a cut-paper book in red, black and white, with a tree shape on one page and a staircase on the next."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Place]" data-kind="35mm film" data-full="assets/img/creatives/photo-09-lg.jpg"><img src="assets/img/creatives/photo-09.jpg" width="900" height="1358" loading="lazy" alt="Film photo of a green iron bridge with two pointed towers against a blue sky with clouds."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Collage" data-full="assets/img/creatives/more-09-lg.jpg"><img src="assets/img/creatives/more-09.jpg" width="900" height="1255" loading="lazy" alt="Charcoal and newspaper collage of staircases crossing in different directions."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="There Is Something on Your Left" data-kind="Poster" data-full="assets/img/creatives/design-10-lg.jpg"><img src="assets/img/creatives/design-10.jpg" width="900" height="1273" loading="lazy" alt="Poster in red, cream and black. A face with a black bob and fringe covering the eyes, under the words There is something on your left."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Place]" data-kind="35mm film" data-full="assets/img/creatives/photo-10-lg.jpg"><img src="assets/img/creatives/photo-10.jpg" width="900" height="597" loading="lazy" alt="Film photo looking down long escalators in an underground station, people blurred as they ride."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Game design" data-full="assets/img/creatives/design-11-lg.jpg"><img src="assets/img/creatives/design-11.jpg" width="900" height="1200" loading="lazy" alt="A pile of small numbered game cards in blue, green and grey next to a printed sheet of game rules."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Place]" data-kind="35mm film" data-full="assets/img/creatives/photo-11-lg.jpg"><img src="assets/img/creatives/photo-11.jpg" width="900" height="1358" loading="lazy" alt="Film photo of curving red sandstone canyon walls with light coming in from above."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Animation" data-full="assets/img/creatives/design-12-lg.jpg" data-anim="assets/img/creatives/design-12.gif"><img src="assets/img/creatives/design-12.jpg" width="800" height="450" loading="lazy" alt="Still from an animation: a drawn eye with red veins and a large black pupil above curved black lines."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Place]" data-kind="35mm film" data-full="assets/img/creatives/photo-12-lg.jpg"><img src="assets/img/creatives/photo-12.jpg" width="900" height="597" loading="lazy" alt="Film photo of a busy city street with tram wires overhead, tall brick buildings and people crossing."></button></li>
+      <li><button type="button" class="piece" data-cursor="Open" data-title="[Title]" data-kind="Typography" data-full="assets/img/creatives/design-13-lg.jpg"><img src="assets/img/creatives/design-13.jpg" width="420" height="595" loading="lazy" alt="Black page with a poem about rain set in white type. The letters of some words fall and scatter down the page like raindrops."></button></li>
+    </ul>
+  </div>
+</div>
+</main>
 
-    <!-- DESIGN SECTION -->
-    <section class="creatives-section">
-      <div class="creatives-section-header">
-        <h2>Design</h2>
-        <div>
-          <p>Beyond UX, my creative practice is grounded in <strong>visual storytelling</strong> and <strong>graphic experimentation</strong>.</p>
-          <p>This collection explores typography, branding, and conceptual art as ways to translate complex ideas into striking, minimalist visuals.</p>
-          <p>It's also a space for me to play with <strong>composition</strong> and form <strong>beyond traditional product cycles</strong>.</p>
-        </div>
-      </div>
-      <div class="creatives-grid">
-        <img src="assets/images/creatives/design-01.png" alt="Building Blocks — typographic poster" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-02.png" alt="The 6 — conceptual poster" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-03.png" alt="The 7 — conceptual poster" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-04.png" alt="The 4 — conceptual poster" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-05.png" alt="The 5 — conceptual poster" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-06.gif" alt="Look Closer — animated typographic study" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-07.png" alt="Social Purpose — editorial project" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-08.png" alt="Unit 1 Week 1 — visual study" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-09.jpg" alt="Print and layout study" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-10.png" alt="Miscommunication — typographic project" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-11.jpg" alt="Editorial spread study" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-12.gif" alt="Guilty Pleasure — animated poster" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/design-13.jpg" alt="Unit 4 — visual identity study" loading="lazy" decoding="async">
-      </div>
-    </section>
+<button type="button" class="totop up" id="totop" aria-label="Back to top" data-cursor="Top" hidden><svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path d="M8 17V2M1.5 8.5 8 2l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
 
-    <!-- PHOTOGRAPHY SECTION -->
-    <section class="creatives-section">
-      <div class="creatives-section-header">
-        <h2>Photography</h2>
-        <div>
-          <p>Photography is how I practice looking.</p>
-          <p>By documenting everyday moments, textures, and environments, I explore framing, rhythm, and atmosphere.</p>
-          <p>These skills that continue to shape how I approach visual storytelling and interaction design.</p>
-        </div>
+<footer class="foot" id="contact" data-trail>
+  <div class="wrap">
+    <h2 class="foot__title">Let's connect</h2>
+    <div class="foot__grid">
+      <div><p class="h3" style="margin-bottom:6px">Find me</p>
+        <ul class="label">
+          <li><a class="textlink" href="https://www.linkedin.com/in/feifey-wang/" target="_blank" rel="noopener">LinkedIn<span class="sr"> (opens in new tab)</span></a></li>
+          <li><a class="textlink" href="https://github.com/feifeywang" target="_blank" rel="noopener">GitHub<span class="sr"> (opens in new tab)</span></a></li>
+          <li><a class="textlink" href="assets/Feifey_Wang_Resume_Interaction.pdf" target="_blank" rel="noopener">Resume<span class="sr"> (PDF, opens in new tab)</span></a></li>
+        </ul>
       </div>
-      <div class="creatives-grid creatives-grid-wide">
-        <img src="assets/images/creatives/photo-01.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-02.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-03.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-04.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-05.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-06.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-07.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-08.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-09.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-10.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-11.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/photo-12.jpg" alt="35mm film photograph" loading="lazy" decoding="async">
+      <div><p class="h3" style="margin-bottom:14px">Email me</p>
+        <p class="addr" id="addr">feifeywang@gmail.com</p>
+        <div class="row" style="margin-top:12px"><button type="button" class="chip" id="copy">Copy email</button><span id="copied" aria-live="polite" class="count"></span></div>
       </div>
-    </section>
-
-    <!-- + MORE SECTION -->
-    <section class="creatives-section">
-      <div class="creatives-section-header">
-        <h2>+ More</h2>
-        <div>
-          <p>This is my <strong>creative laboratory :)</strong></p>
-          <p>A place for <strong>play</strong>, <strong>exploration</strong>, and <strong>unfinished thoughts</strong>.</p>
-          <p>This is also where everything started.</p>
-        </div>
-      </div>
-      <div class="creatives-grid creatives-grid-wide">
-        <img src="assets/images/creatives/more-01.jpg" alt="Mission Complete" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/more-02.jpg" alt="The Asthmatic" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/more-03.jpg" alt="Heterogeneous" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/more-04.jpg" alt="The Salvation" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/more-05.jpg" alt="2019–2020" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/more-06.jpg" alt="Mixed media study" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/more-07.jpg" alt="Missing" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/more-08.png" alt="The Breakdown" loading="lazy" decoding="async">
-        <img src="assets/images/creatives/more-09.jpg" alt="Time Stairway" loading="lazy" decoding="async">
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-left">
-      <img src="assets/images/common/logo-ff.svg" alt="Feifey Wang logo" class="footer-logo">
-      <h2 class="footer-heading">Let's<br>Connect</h2>
+      <p class="foot__say">Thank you for your interest, let's collaborate!</p>
     </div>
-    <div class="footer-right">
-      <p class="footer-text">Thank you for your interest, let's collaborate!</p>
-      <p class="footer-credit">Made with lots of bobas + sweets &nbsp;© Feifey Wang</p>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/feifey-wang/" target="_blank" rel="noopener noreferrer"><span class="footer-link-icon">in</span> LinkedIn</a>
-        <a href="https://github.com/feifeywang" target="_blank" rel="noopener noreferrer"><span class="footer-link-icon">⌥</span> Github</a>
-        <a href="mailto:cwang54@sva.edu"><span class="footer-link-icon">✉</span> Email</a>
-      </div>
-    </div>
-  </footer>
+    <small>Made with lots of bobas and sweets. © Feifey Wang</small>
+  </div>
+</footer>
 
+<div class="bar bar--bottom wallbar" id="wallbar" aria-hidden="true">
+  <div class="wrap bar__in"><p class="wallbar__t"><b id="wb-title">Creatives</b><span id="wb-desc">Posters, type experiments, drawings and film photos. Open any image for details.</span></p><p class="label" id="wb-meta"></p></div>
+</div>
+
+<dialog id="lightbox" aria-labelledby="lb-title">
+  <div class="lb__top"><span class="label" style="color:var(--ink)">Feifey Wang</span><button type="button" class="lb__btn label" id="lb-close">Close</button></div>
+  <div class="lb__stage">
+    <button type="button" class="lb__arrow" id="lb-prev" aria-label="Previous piece"><svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M12 1 2 11l10 10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    <img id="lb-img" src="" alt="">
+    <button type="button" class="lb__arrow" id="lb-next" aria-label="Next piece"><svg width="14" height="22" viewBox="0 0 14 22" aria-hidden="true"><path d="M2 1l10 10L2 21" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+  </div>
+  <div class="lb__info" aria-live="polite">
+    <div><h2 class="h3" id="lb-title"></h2><p id="lb-desc" style="color:var(--mute);font-size:15px">[One or two lines on what this piece is about and why you made it.]</p></div>
+    <p class="label"><span id="lb-kind"></span> <span id="lb-count" style="margin-left:14px"></span></p>
+  </div>
+</dialog>
 </body>
 </html>

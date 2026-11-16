@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Work, Feifey Wang</title>
+  <meta name="description" content="Case studies by Feifey Wang: product design, UX research and brand identity.">
+  <link rel="icon" href="assets/images/common/logo-ff.svg">
+  <link rel="apple-touch-icon" href="assets/images/common/logo-ff.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>(function(){var m=!matchMedia('(prefers-reduced-motion: reduce)').matches;try{var s=localStorage.getItem('fw-motion');if(s==='on')m=true;if(s==='off')m=false}catch(e){}document.documentElement.classList.add(m?'motion-on':'motion-off')})();</script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main" id="skip">Skip to content</a>
+<canvas id="trail" aria-hidden="true"></canvas>
+<div id="cursor-label" aria-hidden="true"></div>
+<header class="bar bar--top" id="topbar">
+  <nav class="wrap bar__in" aria-label="Main">
+    <a class="logo" href="index.html" data-nav="home" aria-label="Feifey Wang, home"><span>ff</span></a>
+    <div class="navdd" id="work-dd">
+      <button type="button" id="work-btn" data-nav="work" aria-current="page" aria-expanded="false" aria-controls="work-menu"><span>Work</span><svg class="navdd__chev" width="9" height="6" viewBox="0 0 9 6" aria-hidden="true"><path d="M1 1l3.5 3.5L8 1" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+      <ul class="navdd__menu" id="work-menu" hidden>
+        <li><a href="work.html" aria-current="page"><span>All work</span></a></li>
+        <li><a href="toiletdeliveryapp.html"><span>Toilet Delivery</span></a></li>
+        <li><a href="budgie.html"><span>Budgie</span></a></li>
+        <li><a href="taelor.html"><span>Taelor</span></a></li>
+        <li><a href="industrious.html"><span>Industrious</span></a></li>
+        <li><a href="wellcomecollection.html"><span>Wellcome Collection</span></a></li>
+      </ul>
+    </div>
+    <a href="creatives.html" data-nav="creatives"><span>Creatives</span></a>
+    <a href="about.html" data-nav="about"><span>About</span></a>
+    <a href="assets/Feifey_Wang_Resume_Interaction.pdf" target="_blank" rel="noopener"><span>Resume</span><span class="sr"> (PDF, opens in new tab)</span></a>
+    <button type="button" id="motion" aria-pressed="true"><span>Motion on</span></button>
+  </nav>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="page" id="p-work">
+  <div class="wrap">
+    <h1 class="sr" id="work-h1" tabindex="-1">Work</h1>
+    <ul class="tiles tiles--two tiles--dark" id="work-list">
+      <li data-tags="product web"><a class="tile" href="toiletdeliveryapp.html" data-cursor="View Toilet Delivery">
+        <div class="tile__media"><img src="assets/img/card-toilet.jpg" width="1200" height="800" alt="Three phone screens of the Toilet Delivery app: a city map covered in restroom pins, a restroom detail card, and a route with a stop navigation button."></div>
+        <div class="tile__info"><div class="tile__top"><h2 class="tile__title">Toilet Delivery</h2><p class="label">Web app, 2025 to now</p></div>
+        <p class="tile__desc">A map-based web app that helps delivery workers quickly find usable restrooms with confidence.</p></div>
+      </a></li>
+      <li data-tags="product"><a class="tile" href="budgie.html" data-cursor="View Budgie">
+        <div class="tile__media"><img src="assets/img/bud-press.jpg" width="1600" height="1200" loading="lazy" alt="A hand reaching to press the beak of Budgie, a small parrot-shaped device perched on a computer monitor."></div>
+        <div class="tile__info"><div class="tile__top"><h2 class="tile__title">Budgie</h2><p class="label">Connected product, 2026</p></div>
+        <p class="tile__desc">A parrot-shaped desk companion that lets long-distance friends send short voice messages, beak to beak.</p></div>
+      </a></li>
+      <li data-tags="product"><a class="tile" href="taelor.html" data-cursor="View Taelor">
+        <div class="tile__media"><img src="assets/img/tae-card.jpg" width="1001" height="667" loading="lazy" alt="The redesigned Taelor Meet the team page, with two stylists standing at a clothing rail."></div>
+        <div class="tile__info"><div class="tile__top"><h2 class="tile__title">Taelor</h2><p class="label">UX/UI and marketing design, 2026</p></div>
+        <p class="tile__desc">Website, warehouse tool and brand touchpoints for a menswear rental startup.</p></div>
+      </a></li>
+      <li data-tags="research"><a class="tile" href="industrious.html" data-cursor="View Industrious">
+        <div class="tile__media"><img src="assets/img/card-industrious.jpg" width="1200" height="800" loading="lazy" alt="Pages from the Industrious research report: research goals, interview notes, insight themes and photos of coworking spaces."></div>
+        <div class="tile__info"><div class="tile__top"><h2 class="tile__title">Industrious</h2><p class="label">Research report, 2025</p></div>
+        <p class="tile__desc">Research-driven strategy on how workplace behaviors, social comfort and control shape engagement in shared coworking spaces.</p></div>
+      </a></li>
+      <li data-tags="mobile research"><a class="tile" href="wellcomecollection.html" data-cursor="View Wellcome Collection">
+        <div class="tile__media"><img src="assets/img/card-wellcome.jpg" width="1200" height="800" loading="lazy" alt="Four phone screens of the Wellcome Collection companion app: the museum entrance, an exhibition list, a gallery page and a colour-coded floor map."></div>
+        <div class="tile__info"><div class="tile__top"><h2 class="tile__title">Wellcome Collection</h2><p class="label">Mobile prototype, 2025</p></div>
+        <p class="tile__desc">A mobile-first companion that brings exhibition information and audio guides into one accessible, in-gallery flow.</p></div>
+      </a></li>
+    </ul>
+  </div>
+</div>
+</main>
+
+<button type="button" class="totop" id="totop" aria-label="Back to top" data-cursor="Top" hidden><svg width="16" height="18" viewBox="0 0 16 18" aria-hidden="true"><path d="M8 17V2M1.5 8.5 8 2l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+
+<footer class="foot" id="contact" data-trail>
+  <div class="wrap">
+    <h2 class="foot__title">Let's connect</h2>
+    <div class="foot__grid">
+      <div><p class="h3" style="margin-bottom:6px">Find me</p>
+        <ul class="label">
+          <li><a class="textlink" href="https://www.linkedin.com/in/feifey-wang/" target="_blank" rel="noopener">LinkedIn<span class="sr"> (opens in new tab)</span></a></li>
+          <li><a class="textlink" href="https://github.com/feifeywang" target="_blank" rel="noopener">GitHub<span class="sr"> (opens in new tab)</span></a></li>
+          <li><a class="textlink" href="assets/Feifey_Wang_Resume_Interaction.pdf" target="_blank" rel="noopener">Resume<span class="sr"> (PDF, opens in new tab)</span></a></li>
+        </ul>
+      </div>
+      <div><p class="h3" style="margin-bottom:14px">Email me</p>
+        <p class="addr" id="addr">feifeywang@gmail.com</p>
+        <div class="row" style="margin-top:12px"><button type="button" class="chip" id="copy">Copy email</button><span id="copied" aria-live="polite" class="count"></span></div>
+      </div>
+      <p class="foot__say">Thank you for your interest, let's collaborate!</p>
+    </div>
+    <small>Made with lots of bobas and sweets. © Feifey Wang</small>
+  </div>
+</footer>
+</body>
+</html>
